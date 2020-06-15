@@ -1,5 +1,10 @@
 <?php 
-include_once 'partials/connection.php';
+$path = $_SERVER['DOCUMENT_ROOT'];
+include($path.'/comparOperateur/config/autoload.php');
+include_once $path.'/comparOperateur/partials/connection.php';
+$operatorsManager = new OperatorsManager($pdo);
+$destinationsManager = new DestinationsManager($pdo);
+$reviewsManager = new ReviewsManager($pdo);
 ?>
 
 <div id="add-operator">
@@ -38,7 +43,7 @@ include_once 'partials/connection.php';
 
         <select name="add-premium" id="add-premium">
             <?php 
-                $req = $database->query('SELECT name FROM tour_operators');
+                $req = $pdo->query('SELECT name FROM tour_operators');
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($results as $result) {
@@ -65,7 +70,7 @@ include_once 'partials/connection.php';
 
         <select name="operator" id="operator">
             <?php 
-                $req = $database->query('SELECT * FROM tour_operators');
+                $req = $pdo->query('SELECT * FROM tour_operators');
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($results as $result) {
@@ -79,35 +84,6 @@ include_once 'partials/connection.php';
 
 </div>
 
-<div id="modify-operator">
-    <h3>Modify an operator</h3>
-    <form action="apps/modify-operator.php" method="POST">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-
-        <label for="rating">Rating:</label><br>
-        <input type="number" id="rating" name="rating" min="0" max="5">
-
-        <p>Premium:</p>
-
-        <div>
-        <input type="radio" id="no" name="premium" value="no"
-                checked>
-        <label for="no">No</label>
-        </div>
-
-        <div>
-        <input type="radio" id="yes" name="premium" value="yes">
-        <label for="yes">Yes</label>
-        </div>
-
-        <label for="link">Link:</label><br>
-        <input type="text" id="link" name="link"><br>
-
-        <input type="submit" value="Add">
-    </form>
-</div>
-
 <div id="delete-operator">
     <h3>Delete an operator</h3>
 
@@ -116,7 +92,7 @@ include_once 'partials/connection.php';
 
     <select name="operator" id="operator">
         <?php 
-            $req = $database->query('SELECT * FROM tour_operators');
+            $req = $pdo->query('SELECT * FROM tour_operators');
             $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($results as $result) {
@@ -138,7 +114,7 @@ include_once 'partials/connection.php';
 
     <select name="destination" id="destination">
         <?php 
-            $req = $database->query('SELECT destinations.id, destinations.location, tour_operators.name FROM destinations INNER JOIN tour_operators WHERE destinations.id_tour_operator = tour_operators.id');
+            $req = $pdo->query('SELECT destinations.id, destinations.location, tour_operators.name FROM destinations INNER JOIN tour_operators WHERE destinations.id_tour_operator = tour_operators.id');
             $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($results as $result) {
