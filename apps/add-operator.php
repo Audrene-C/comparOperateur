@@ -1,7 +1,9 @@
 <?php
 $path = $_SERVER['DOCUMENT_ROOT'];
-include($path.'/comparOperateur/config/autoload.php');
-include_once $path.'/comparOperateur/partials/connection.php';
+// include($path.'/comparOperateur/config/autoload.php');
+include($path.'/config/autoload.php');
+// include_once $path.'/comparOperateur/partials/connection.php';
+include_once $path.'/partials/connection.php';
 $operatorsManager = new OperatorsManager($pdo);
 
 if (!empty($_POST['name']) AND !empty($_POST['rating']) AND !empty($_POST['link']) AND !empty($_POST['premium'])) {
@@ -22,7 +24,7 @@ if (!empty($_POST['name']) AND !empty($_POST['rating']) AND !empty($_POST['link'
                             "is_premium" => $is_premium]);
     $operatorsManager->create($operator);
 
-    echo "operator added";
+    header('admin.php');
 } else {
     echo "zut";
 }

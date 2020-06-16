@@ -5,12 +5,20 @@ include($path.'/config/autoload.php');
 // include_once $path.'/comparOperateur/partials/connection.php';
 include_once $path.'/partials/connection.php';
 $destinationsManager = new DestinationsManager($pdo);
+$operator = new Operator(['osef', 1, 'osef', 0]);
 
-if (!empty($_POST['destination'])) {
-    $destination = intval($_POST['destination']);
+if (!empty($_POST['id']) AND !empty($_POST['location']) AND !empty($_POST['price']) AND !empty($_POST['id_tour_operator'])) {
+    $id = $_POST['id'];
+    $location = $_POST['location'];
+    $price = $_POST['price'];
+    $id_tour_operator = $_POST['id_tour_operator'];
 
-    $destinationsManager->delete($destination);
-    
+    $destination = new Destination(["id" => $id,
+                            "location" => $location,
+                            "price" => $price,
+                            "id_tour_operator" => $id_tour_operator], $operator);
+    $destinationsManager->update($destination);
+
     header('admin.php');
 } else {
     echo "zut";

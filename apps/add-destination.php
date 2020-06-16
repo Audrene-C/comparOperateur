@@ -1,8 +1,11 @@
 <?php
 $path = $_SERVER['DOCUMENT_ROOT'];
-include($path.'/comparOperateur/config/autoload.php');
-include_once $path.'/comparOperateur/partials/connection.php';
+//include($path.'/comparOperateur/config/autoload.php');
+include($path.'/config/autoload.php');
+//include_once $path.'/comparOperateur/partials/connection.php';
+include_once $path.'/partials/connection.php';
 $destinationsManager = new DestinationsManager($pdo);
+$osef = new Operator(['osef', 1, 'osef', 0]);
 
 if (!empty($_POST['location']) AND !empty($_POST['price']) AND !empty($_POST['operator'])) {
     $location = $_POST['location'];
@@ -11,10 +14,10 @@ if (!empty($_POST['location']) AND !empty($_POST['price']) AND !empty($_POST['op
 
     $destination = new Destination(["location" => $location,
                             "price" => $price,
-                            "id_tour_operator" => $operator]);
+                            "id_tour_operator" => $operator], $osef);
     $destinationsManager->create($destination);
 
-    echo "destination added";
+    header('admin.php');
 } else {
     echo "zut";
 }

@@ -4,13 +4,28 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 include($path.'/config/autoload.php');
 // include_once $path.'/comparOperateur/partials/connection.php';
 include_once $path.'/partials/connection.php';
-$destinationsManager = new DestinationsManager($pdo);
+$operatorsManager = new OperatorsManager($pdo);
 
-if (!empty($_POST['destination'])) {
-    $destination = intval($_POST['destination']);
+if (!empty($_POST['id']) AND !empty($_POST['name']) AND !empty($_POST['rating']) AND !empty($_POST['link']) AND !empty($_POST['premium'])) {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $rating = $_POST['rating'];
+    $link = $_POST['link'];
+    $is_premium = $_POST['premium'];
 
-    $destinationsManager->delete($destination);
-    
+    if ($is_premium == "no") {
+        $is_premium = 0;
+    } else {
+        $is_premium = 1;
+    }
+
+    $operator = new Operator(["id" => $id,
+                            "name" => $name,
+                            "rating" => $rating,
+                            "link" => $link,
+                            "is_premium" => $is_premium]);
+    $operatorsManager->update($operator);
+
     header('admin.php');
 } else {
     echo "zut";

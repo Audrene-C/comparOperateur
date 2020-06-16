@@ -29,10 +29,21 @@ class OperatorsManager
         ]);
     }
 
-    public function premium(string $name)
+    public function premium(int $id)
     {
-        $req = $this->pdo->prepare('UPDATE tour_operators SET is_premium = 1 WHERE name = :name');
-        $req->execute([':name' => $name]); 
+        $req = $this->pdo->prepare('UPDATE tour_operators SET is_premium = 1 WHERE id = :id');
+        $req->execute([':id' => $id]); 
+    }
+
+    public function update(Operator $operator) {
+        $req = $this->pdo->prepare('UPDATE tour_operators SET name = :name, rating = :rating, link = :link, is_premium = :is_premium WHERE id = :id');
+        $req->execute(array(
+            ':name' => $operator->getName(),
+            ':rating' => $operator->getRating(),
+            ':link' => $operator->getLink(),
+            ':is_premium' => $operator->getIs_premium(),
+            ':id' => $operator->getId()
+            ));
     }
 
     public function get($info)
@@ -48,8 +59,23 @@ class OperatorsManager
         return new Operator($data);
     }
 
+    public function getList()
+    {
+        $operators = [];
+    
+        $req = $this->pdo->query('SELECT * FROM tour_operators');
+        
+        while ($data = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            array_push($operators, new Operator($data));
+        }
+        
+        return $operators;
+        }
+
     public function delete(int $id)
     {
         $this->pdo->exec('DELETE FROM tour_operators WHERE id = '.$id);
     }
+
 }

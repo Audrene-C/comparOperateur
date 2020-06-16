@@ -1,14 +1,17 @@
 <?php
 $path = $_SERVER['DOCUMENT_ROOT'];
-include($path.'/comparOperateur/config/autoload.php');
-include_once $path.'/comparOperateur/partials/connection.php';
+// include($path.'/comparOperateur/config/autoload.php');
+include($path.'/config/autoload.php');
+// include_once $path.'/comparOperateur/partials/connection.php';
+include_once $path.'/partials/connection.php';
 $operatorsManager = new OperatorsManager($pdo);
 
 if (!empty($_POST['add-premium'])) {
-    $name = $_POST['add-premium'];
+    $id = $_POST['add-premium'];
 
-    $operatorsManager->premium($name);
-    echo "premium added";
+    $operatorsManager->premium($id);
+    
+    header('admin.php');
 } else {
     echo "zut";
 }

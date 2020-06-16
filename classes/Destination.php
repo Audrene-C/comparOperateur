@@ -6,6 +6,7 @@ class Destination
     protected $location;
     protected $price;
     protected $id_tour_operator;
+    protected $operator;
 
     ///// get and setter for id /////
     public function setId(int $id)
@@ -51,6 +52,16 @@ class Destination
         return ($this->id_tour_operator);
     }
 
+    ///// get and setter for operator /////
+    public function setOperator(Operator $operator)
+    {      
+        $this->operator = $operator;
+    }
+    public function getOperator()
+    {
+        return ($this->operator);
+    }
+
     //hydrate from an array
     public function hydrate(array $destinationRow)
     {
@@ -66,8 +77,10 @@ class Destination
     }
 
     //construct with hydrate function
-    public function __construct(array $destinationRow)
+    public function __construct(array $destinationRow, Operator $operator)
     {
         $this->hydrate($destinationRow);
+        $this->operator = $operator;
     }
+
 }

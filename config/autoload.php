@@ -2,7 +2,10 @@
 
 function loadClass($class)
 {
-    require_once('E:/laragon/www/comparOperateur/classes/'.$class.'.php');
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    //require_once('E:/laragon/www/comparOperateur/classes/'.$class.'.php');
+    require_once($path.'/classes/'.$class.'.php');
+
 }
 
 
