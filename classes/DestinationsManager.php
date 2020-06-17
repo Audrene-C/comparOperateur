@@ -31,22 +31,22 @@ class DestinationsManager
     public function get($info)
     {
         if(is_int($info)) {
-            $reqDestination = $this->pdo->query('SELECT * FROM destinations WHERE id = '.$info);
-            $dataDestination = $reqDestination->fetch(PDO::FETCH_ASSOC);
+            $req = $this->pdo->query('SELECT * FROM destinations WHERE id = '.$info);
+            $data = $req->fetch(PDO::FETCH_ASSOC);
 
-            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$dataDestination['id_tour_operator']);
+            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
             $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
             $operator = new Operator($dataOperator);
         } else {
-            $reqDestination = $this->pdo->prepare('SELECT * FROM destinations WHERE location = :location');
-            $reqDestination->execute([':location' => $info]);
-            $dataDestination = $reqDestination->fetch(PDO::FETCH_ASSOC);
+            $req = $this->pdo->prepare('SELECT * FROM destinations WHERE location = :location');
+            $req->execute([':location' => $info]);
+            $data = $req->fetch(PDO::FETCH_ASSOC);
 
-            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$dataDestination['id_tour_operator']);
+            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
             $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
             $operator = new Operator($dataOperator);
         }
-        return new Destination($dataDestination, $operator);
+        return new Destination($data, $operator);
     }
 
     public function getList()

@@ -4,6 +4,7 @@ class Review
 {
     protected $id;
     protected $message;
+    protected $rating;
     protected $author;
     protected $id_tour_operator;
 
@@ -29,6 +30,16 @@ class Review
     public function getMessage()
     {
         return ($this->message);
+    }
+
+    ///// get and setter for rating /////
+    public function setRating(string $rating)
+    {      
+        $this->rating = htmlspecialchars($rating);
+    }
+    public function getRating()
+    {
+        return ($this->rating);
     }
 
     ///// get and setter for author /////

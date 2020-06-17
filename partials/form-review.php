@@ -11,7 +11,7 @@
         <input type="text" id="message" name="message"><br>
 
         <label for="rating">Give a rating:</label><br>
-        <input type="number" id="rating" name="rating" min="0" max="5"><br>
+        <input type="number" id="rating" name="rating" min="1" max="5"><br>
 
         <input type="submit" value="Add">
 

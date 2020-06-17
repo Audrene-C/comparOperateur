@@ -88,6 +88,60 @@ class OperatorsManager
         return $operators;
     }
 
+    public function calcAverageRating(int $id) {
+        $ratings = array(
+            '5' => 0,
+            '4' => 0,
+            '3' => 0,
+            '2' => 0,
+            '1' => 0
+        );        
+        $totalWeight = 0;
+        $totalReviews = 0;
+
+        $req = $this->pdo->query('SELECT reviews.rating FROM reviews INNER JOIN tour_operators ON reviews.id_tour_operator = tour_operators.id WHERE tour_operators.id = '.$id);
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            switch ($data['rating'])
+            {
+                case '1':
+                    $ratings['1'] += intval($data['rating']); break;
+
+                case '2':
+                    $ratings['2'] += intval($data['rating']); break;
+
+                case '3':
+                    $ratings['3'] += intval($data['rating']); break;
+
+                case '4':
+                    $ratings['4'] += intval($data['rating']); break;
+
+                case '5':
+                    $ratings['5'] += intval($data['rating']); break;
+            }
+        }
+        
+        foreach ($ratings as $weight => $numberofReviews) {
+            $WeightMultipliedByNumber = $weight * $numberofReviews;
+            $totalWeight += $WeightMultipliedByNumber;
+            $totalReviews += $numberofReviews;
+        }
+        
+        //divide the total weight by total number of reviews
+        $averageRating = $totalWeight / $totalReviews;
+        
+        return $averageRating;
+    }
+
+    public function updateRating(Operator $operator, int $updatedRating) {
+        $req = $this->pdo->prepare('UPDATE tour_operators SET rating = :rating WHERE id = :id');
+        $req->execute(array(
+            ':rating' => $operator->getRating(),
+            ':id' => $updatedRating
+        ));
+    }
+
     public function delete(int $id)
     {
         $this->pdo->exec('DELETE FROM tour_operators WHERE id = '.$id);

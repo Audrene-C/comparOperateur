@@ -5,17 +5,25 @@ include($path.'/config/autoload.php');
 //include_once $path.'/comparOperateur/partials/connection.php';
 include_once $path.'/partials/connection.php';
 $reviewsManager = new ReviewsManager($pdo);
+$operatorsManager = new OperatorsManager($pdo);
 
-if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['message']) AND !empty($_POST['rating'])) {
-    $operator = $_POST['operator'];
+if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['message']) AND isset($_POST['rating'])) {
+    $operatorId = intval($_POST['operator']);
     $author = $_POST['author'];
     $message = $_POST['message'];
-    $rating = $_POST['rating'];
+    $newRating = intval($_POST['rating']);
+
+    $operator = $operatorsManager->get($operatorId);
 
     $review = new Review(["message" => $message,
+                        "rating" => $newRating,
                         "author" => $author,
-                        "id_tour_operator" => $operator]);
+                        "id_tour_operator" => $operatorId]);
     $reviewsManager->create($review);
+
+    $updatedRating = round($operatorsManager->calcAverageRating($operatorId));
+    var_dump($updatedRating);
+    //$operatorsManager->updateRating($operator, intval($updatedRating));
 
     //header('admin.php');
 } else {

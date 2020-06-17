@@ -81,4 +81,5 @@ class Operator
     {
         $this->hydrate($operatorRow);
     }
+
 }
