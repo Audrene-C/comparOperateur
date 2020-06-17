@@ -50,17 +50,13 @@ class DestinationsManager
     }
 
     public function getList()
-    {
+    {    
         $destinations = [];
-    
-        $req = $this->pdo->query('SELECT destinations.id, destinations.location, destinations.id_tour_operator, tour_operators.name FROM destinations INNER JOIN tour_operators WHERE destinations.id_tour_operator = tour_operators.id');
-        
+        $osef = new Operator(['osef', 1, 'osef', 0]);
+        $req = $this->pdo->query('SELECT * FROM destinations GROUP BY location');
         while ($data = $req->fetch(PDO::FETCH_ASSOC))
         {
-            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
-            $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
-            $operator = new Operator($dataOperator);
-            array_push($destinations, new Destination($data, $operator));
+            array_push($destinations, new Destination($data, $osef));
         }
         
         return $destinations;

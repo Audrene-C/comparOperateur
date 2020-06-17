@@ -1,4 +1,11 @@
-
+<?php 
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    // include($path.'/comparOperateur/config/autoload.php');
+    include($path.'/config/autoload.php');
+    // include_once $path.'/comparOperateur/partials/connection.php';
+    include_once $path.'/partials/connection.php';
+    $destinationsManager = new DestinationsManager($pdo);
+?>
 
 <!doctype html>
 <html lang="en">
@@ -50,34 +57,27 @@
 
 <main>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-2 col-sm-1">
-                <div class="card card-1">
-                    <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
-                    <span class="d2">
-                    <h1>Lorem</h1>
-                    <button class="btn btn-card"><a href="views/destinations.php">Voir plus</a></button>
-                </div>
-            </div>
+    <?php
+    $numOfCols = 3;
+    $rowCount = 0;
+    $destinations = $destinationsManager->getList();
 
-            <div class="col-lg-4 col-md-2 col-sm-1">
-                <div class="card card-1">
-                    <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
-                    <span class="d2">
-                    <h1>Lorem</h1>
-                    <button class="btn btn-card">Positive</button>
-                </div>
-            </div>
+    foreach ($destinations as $destination) {
 
-            <div class="col-lg-4 col-md-2 col-sm-1">
-                <div class="card card-1">
-                    <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
-                    <span class="d2">
-                    <h1>Lorem</h1>
-                    <button class="btn btn-card">Positive</button>
+        if($rowCount % $numOfCols == 0) { ?> <div class="row"> <?php } 
+            $rowCount++; ?>  
+                <div class="col-lg-4 col-md-2 col-sm-1">
+                    <div class="card card-1">
+                        <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
+                        <span class="d2">
+                        <h1><?php echo $destination->getLocation(); ?></h1>
+                        <button class="btn btn-card"><a href="views/destinations/<?php echo $destination->getLocation(); ?>.php">Voir plus</a></button>
+                    </div>
                 </div>
-            </div>
-        </div>
+        <?php
+            if($rowCount % $numOfCols == 0 || $rowCount == count($destinations)) { ?> </div> <?php } 
+    }
+    ?>
     </div>
 </main>
 

@@ -1,12 +1,11 @@
 <?php
-
-?>
-
-<?php
-$path = $_SERVER['DOCUMENT_ROOT'];
-/*var_dump($path);*/
-$path2 = "/simplon/Projets_groupe/comparOperateur";
-
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    //$path2 = "/simplon/Projets_groupe/comparOperateur";
+    // include($path.'/comparOperateur/config/autoload.php');
+    include($path.'/config/autoload.php');
+    // include_once $path.'/comparOperateur/partials/connection.php';
+    include_once $path.'/partials/connection.php';
+    $destinationsManager = new DestinationsManager($pdo);
 ?>
 
 <!doctype html>
@@ -29,7 +28,8 @@ $path2 = "/simplon/Projets_groupe/comparOperateur";
 <body>
 <header>
     <?php
-    include $path.$path2.'/partials/nav.php';
+    //include $path.$path2.'/partials/nav.php';
+    include $path.'/partials/nav.php';
     ?>
 </header>
 
@@ -54,11 +54,12 @@ $path2 = "/simplon/Projets_groupe/comparOperateur";
 
 <footer>
     <?php
-    include $path.$path2.'/partials/footer.php';
+    //include $path.$path2.'/partials/footer.php';
+    include $path.'/partials/footer.php';
     ?>
 </footer>
 
-<script src="<?= $path.$path2.'/js/rating.js' ?>"></script>
+<script src="<?= $path.'/js/rating.js' ?>"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
