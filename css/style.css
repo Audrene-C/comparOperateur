@@ -1,3 +1,4 @@
+/*NAV*/
 span{
     width: 130px;
     margin-left: 30px;
@@ -8,10 +9,8 @@ span{
 .logo-icon{
     color: #12f690;
 }
+/*end NAV*/
 
-/*a{
-    background-color: #555555;
-}*/
 
 
 .carousel{
@@ -52,7 +51,7 @@ body {
 }
 
 .card-1:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 24px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 
@@ -81,30 +80,5 @@ i{
     color: whitesmoke;
 }
 
-footer{
-    padding-top: 20px;
-    background-color: #12f690;
-    height: 180px;
-}
 
-.contact-link{
-    color: #555555;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-
-.contact-link:hover{
-    color: #555555;
-    text-decoration: none;
-
-}
-
-.reseau{
-    margin-right: 10px;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-
-.reseau:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
 
