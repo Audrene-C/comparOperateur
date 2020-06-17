@@ -41,6 +41,21 @@ class ReviewsManager
         return new Review($data);
     }
 
+    public function getReviewByOperator(string $name) {
+
+        $reviews = [];
+
+        $req = $this->pdo->prepare('SELECT reviews.id, reviews.message, reviews.author, reviews.id_tour_operator FROM tour_operators INNER JOIN reviews ON  tour_operators.id = reviews.id_tour_operator WHERE name = :name');
+        $req->execute([':name' => $name]);
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            array_push($reviews, new Review($data));
+        }
+        
+        return $reviews;
+    }
+
     public function delete(Review $review)
     {
         $this->pdo->exec('DELETE FROM reviews WHERE id = '.$review->getId());

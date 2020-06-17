@@ -7,65 +7,10 @@
     $operatorsManager = new OperatorsManager($pdo);
     $destinationsManager = new DestinationsManager($pdo);
     $reviewsManager = new ReviewsManager($pdo);
-?>
 
-    <div id="modify-operator">
-        <h3>Modify an operator</h3>
-        <form action="" method="GET">
+    $data = $reviewsManager->getReviewByOperator('ClubMed');
+    var_dump($data);
 
-            <select name="operator" id="operator">
-                <option value=""></option>
-                <?php 
-                    $operators = $operatorsManager->getList();
-
-                    foreach ($operators as $operator) {
-                        ?> <option value="<?php echo $operator->getId(); ?>"><?php echo $operator->getName(); ?></option> <?php
-                    }
-                ?>
-            </select>
-
-            <input type="submit" value="Select">
-        </form>
-
-        <?php
-            if (!empty($_GET['operator'])) {
-                $id = intval($_GET['operator']);
-                $operator = $operatorsManager->get($id);
-                ?> 
-                <form action="apps/modify-operator.php" method="POST">
-
-                <input type="hidden" id="id" name="id" value="<?php echo $operator->getId(); ?>"><br>
-
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" value="<?php echo $operator->getName(); ?>"><br>
-    
-                <label for="rating">Rating:</label><br>
-                <input type="number" id="rating" name="rating" min="0" max="5" value="<?php echo $operator->getRating(); ?>">
-    
-                <p>Premium:</p>
-    
-                <div>
-                <input type="radio" id="no" name="premium" value="no" <?php if ($operator->getIs_premium() == 0) {echo "checked";} ?> >
-                <label for="no">No</label>
-                </div>
-    
-                <div>
-                <input type="radio" id="yes" name="premium" value="yes" <?php if ($operator->getIs_premium() == 1) {echo "checked";} ?> >
-                <label for="yes">Yes</label>
-                </div>
-    
-                <label for="link">Link:</label><br>
-                <input type="text" id="link" name="link" value="<?php echo $operator->getLink(); ?>"><br>
-    
-                <input type="submit" value="Add">
-            </form>
-            <?php
-            }
-        ?>
-
-    </div>
-   
-<?php
     function prettyArray(array $nested_arrays): void
     {
         foreach ($nested_arrays as $key => $value) {

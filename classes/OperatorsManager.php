@@ -71,7 +71,22 @@ class OperatorsManager
         }
         
         return $operators;
+    }
+
+    public function getOperatorByDestination(string $name) {
+
+        $operators = [];
+
+        $req = $this->pdo->prepare('SELECT tour_operators.id, tour_operators.name, tour_operators.rating, tour_operators.link, tour_operators.is_premium FROM tour_operators INNER JOIN destinations ON tour_operators.id = destinations.id_tour_operator WHERE location = :location');
+        $req->execute([':location' => $name]);
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            array_push($operators, new Operator($data));
         }
+        
+        return $operators;
+    }
 
     public function delete(int $id)
     {
