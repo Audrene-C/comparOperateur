@@ -47,26 +47,24 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi, consectetur corporis delectus dolor dolores earum enim exercitationem fugiat itaque laborum nihil placeat repellat rerum saepe sint sit, ullam vero.</p>
                 </div>
                 <div class="col-12">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <ul>
-                                    <?php
-                                        foreach ($destinations as $destination) {
-                                            $operator = $destination->getOperator();
-                                            ?>
-                                            <li>
-                                                <p>Travel with <?php echo $operator->getName(); ?> for <?php echo $destination->getPrice(); ?> $</p>
-                                                <form action="operators.php" method="POST">
-                                                    <input type="hidden" id="operator" name="operator" value="<?php echo $operator->getId(); ?>">
-                                                    <input type="submit" class="btn btn-card" value="See more">
-                                                </form>
-                                            </li>
-                                            <?php
-                                        } 
-                                    ?>
-                                </ul>
-                            </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <ul>
+                                <?php
+                                    foreach ($destinations as $destination) {
+                                        $operator = $destination->getOperator();
+                                        ?>
+                                        <li>
+                                            <p>Travel with <?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients, for <?php echo $destination->getPrice(); ?> $</p>
+                                            <form action="operators.php" method="POST">
+                                                <input type="hidden" id="operator" name="operator" value="<?php echo $operator->getId(); ?>">
+                                                <input type="submit" class="btn" value="See more">
+                                            </form>
+                                        </li>
+                                        <?php
+                                    } 
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>

@@ -72,6 +72,22 @@ class DestinationsManager
         return $destinations;
     }
 
+    public function getDestinationsByOperator(int $id) {
+
+        $osef = new Operator(['osef', 1, 'osef', 0]);
+        $destinations = [];
+
+        $req = $this->pdo->prepare('SELECT * FROM destinations WHERE id_tour_operator = :id_tour_operator');
+        $req->execute([':id_tour_operator' => $id]);
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            array_push($destinations, new Destination($data, $osef));
+        }
+        
+        return $destinations;
+    }
+
     public function update(Destination $destination) {
         $req = $this->pdo->prepare('UPDATE destinations SET location = :location, price = :price WHERE id = :id');
         $req->execute(array(

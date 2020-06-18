@@ -27,7 +27,7 @@
             <input type="text" id="name" name="name"><br>
 
             <label for="rating">Rating:</label><br>
-            <input type="number" id="rating" name="rating" min="0" max="5">
+            <input type="number" id="rating" name="rating" min="1" max="5">
 
             <p>Premium:</p>
 
@@ -126,7 +126,7 @@
                 <input type="text" id="name" name="name" value="<?php echo $operator->getName(); ?>"><br>
     
                 <label for="rating">Rating:</label><br>
-                <input type="number" id="rating" name="rating" min="0" max="5" value="<?php echo $operator->getRating(); ?>">
+                <input type="number" id="rating" name="rating" min="1" max="5" value="<?php echo $operator->getRating(); ?>">
     
                 <p>Premium:</p>
     

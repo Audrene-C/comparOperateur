@@ -22,10 +22,9 @@ if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['m
     $reviewsManager->create($review);
 
     $updatedRating = round($operatorsManager->calcAverageRating($operatorId));
-    var_dump($updatedRating);
-    //$operatorsManager->updateRating($operator, intval($updatedRating));
+    $operatorsManager->updateRating($operator, intval($updatedRating));
 
-    //header('admin.php');
+    header('index.php');
 } else {
     echo "zut";
 }
