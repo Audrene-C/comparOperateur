@@ -1,9 +1,8 @@
 <?php 
-    $path = $_SERVER['DOCUMENT_ROOT'];
     // include($path.'/comparOperateur/config/autoload.php');
-    include($path.'/config/autoload.php');
+    include(__DIR__.'/config/autoload.php');
     // include_once $path.'/comparOperateur/partials/connection.php';
-    include_once $path.'/partials/connection.php';
+    include_once __DIR__.'/partials/connection.php';
     $destinationsManager = new DestinationsManager($pdo);
 ?>
 

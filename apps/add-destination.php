@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT'];
+$path  = str_replace('apps', '', __DIR__);
 //include($path.'/comparOperateur/config/autoload.php');
 include($path.'/config/autoload.php');
 //include_once $path.'/comparOperateur/partials/connection.php';
@@ -17,7 +17,8 @@ if (!empty($_POST['location']) AND !empty($_POST['price']) AND !empty($_POST['op
                             "id_tour_operator" => $operator], $osef);
     $destinationsManager->create($destination);
 
-    header('admin.php');
+    header("Location: ".$path."/index.php");
+    exit();
 } else {
     echo "zut";
 }

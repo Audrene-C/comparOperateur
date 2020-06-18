@@ -1,11 +1,11 @@
 <?php
     if (isset($_POST['location'])) {
-        $path = $_SERVER['DOCUMENT_ROOT'];
+        $path = __DIR__;
         //$path2 = "/simplon/Projets_groupe/comparOperateur";
         // include($path.'/comparOperateur/config/autoload.php');
-        include($path.'/config/autoload.php');
+        include('../config/autoload.php');
         // include_once $path.'/comparOperateur/partials/connection.php';
-        include_once $path.'/partials/connection.php';
+        include_once '../partials/connection.php';
         $destinationsManager = new DestinationsManager($pdo);
         $destinations = $destinationsManager->get($_POST['location']);
         ?>
@@ -31,7 +31,7 @@
     <header>
         <?php
         //include $path.$path2.'/partials/nav.php';
-        include $path.'/partials/nav.php';
+        include '../partials/nav.php';
         ?>
     </header>
 
@@ -75,11 +75,11 @@
     <footer>
         <?php
             //include $path.$path2.'/partials/footer.php';
-            include $path.'/partials/footer.php';
+            include '../partials/footer.php';
         ?>
     </footer>
 
-    <script src="<?= $path.'/js/rating.js' ?>"></script>
+    <script src="../js/rating.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

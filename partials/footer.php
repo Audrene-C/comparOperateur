@@ -1,14 +1,10 @@
-<?php
-
-?>
-
 <footer>
     <div class="container-fluid">
         <div class="row">
             <div class="col-6">
                 <a href="" class="contact-link"><h2>Contact</h2></a><br>
                 <a href="" class="contact-link"><h4>About Us</h4></a><br>
-                <a href="partials/mentions-legale.php" class="contact-link">Mentions Légales</a>
+                <a href="/partials/mentions-legale.php" class="contact-link">Mentions Légales</a>
             </div>
 
             <div class="col-6">

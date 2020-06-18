@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT'];
+$path  = str_replace('apps', '', __DIR__);
 //include($path.'/comparOperateur/config/autoload.php');
 include($path.'/config/autoload.php');
 //include_once $path.'/comparOperateur/partials/connection.php';
@@ -24,7 +24,8 @@ if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['m
     $updatedRating = round($operatorsManager->calcAverageRating($operatorId));
     $operatorsManager->updateRating($operator, intval($updatedRating));
 
-    header('index.php');
+    header("Location: index.php");
+    exit();
 } else {
     echo "zut";
 }
