@@ -71,7 +71,10 @@
                         <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
                         <span class="d2">
                         <h1><?php echo $destination->getLocation(); ?></h1>
-                        <button class="btn btn-card"><a href="views/destinations/<?php echo $destination->getLocation(); ?>.php">Voir plus</a></button>
+                        <form action="views/destinations.php" method="POST">
+                            <input type="hidden" id="location" name="location" value="<?php echo $destination->getLocation(); ?>">
+                            <input type="submit" class="btn btn-card" value="See more">
+                        </form>
                     </div>
                 </div>
         <?php

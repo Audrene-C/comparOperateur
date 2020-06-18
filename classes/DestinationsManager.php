@@ -37,16 +37,26 @@ class DestinationsManager
             $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
             $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
             $operator = new Operator($dataOperator);
+
+            return new Destination($data, $operator);
+
         } else {
+            $destinations = [];
+
             $req = $this->pdo->prepare('SELECT * FROM destinations WHERE location = :location');
             $req->execute([':location' => $info]);
-            $data = $req->fetch(PDO::FETCH_ASSOC);
 
-            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
-            $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
-            $operator = new Operator($dataOperator);
+            while ($data = $req->fetch(PDO::FETCH_ASSOC))
+            {
+                $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
+                $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
+                $operator = new Operator($dataOperator);
+
+                array_push($destinations, new Destination($data, $operator));
+            }
+            return $destinations;
         }
-        return new Destination($data, $operator);
+            
     }
 
     public function getList()
