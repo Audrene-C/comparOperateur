@@ -2,189 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbe5b333-e0f6-464e-bb00-b3aca7d44d9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/test.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/rating.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partials/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partials/nav.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/destinations.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/.versions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/accordion.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/accordion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/accordion.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/accordion.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/ad.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/ad.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/api.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/breadcrumb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/breadcrumb.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/button.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/button.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/card.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/card.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/checkbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/checkbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/checkbox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/checkbox.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/colorize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/colorize.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/comment.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/comment.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/container.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/container.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dimmer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dimmer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dimmer.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dimmer.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/divider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/divider.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dropdown.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dropdown.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dropdown.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/embed.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/embed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/embed.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/embed.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/feed.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/feed.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/flag.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/flag.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/form.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/form.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/form.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/header.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/icon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/icon.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/image.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/image.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/input.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/input.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/item.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/item.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/label.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/label.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/list.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/list.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/loader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/loader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/menu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/menu.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/message.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/message.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/modal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/modal.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/modal.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/nag.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/nag.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/nag.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/nag.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/placeholder.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/placeholder.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/popup.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/progress.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/progress.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/progress.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/progress.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rail.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rating.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rating.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rating.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rating.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/reset.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/reveal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/reveal.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/search.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/search.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/segment.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/segment.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/shape.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/shape.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/shape.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/shape.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sidebar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sidebar.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sidebar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/site.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/site.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/site.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/site.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/state.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/state.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/statistic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/statistic.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/step.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/step.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sticky.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sticky.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sticky.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sticky.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/tab.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/tab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/tab.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/tab.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/table.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/table.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/transition.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/transition.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/transition.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/transition.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/video.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/video.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/video.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/video.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/visibility.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/visibility.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/visit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/visit.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/package.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/semantic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/semantic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/semantic.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/semantic.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/images/flags.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mobile-first.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/semantic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/semantic.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/semantic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/semantic.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/destinations.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,107 +20,117 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="comparoperator@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="comparoperator@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="comparoperator@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="comparoperator: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="comparoperator@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="comparoperator: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="destinations: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="comparoperator@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="comparoperator: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="reviews: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="comparoperator@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="comparoperator: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tour_operators: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5711027">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="63">
-                  <caret line="53" column="52" lean-forward="true" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/partials/footer.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/readMe.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/test.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="39" column="116" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="116" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/destinations.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="7" column="49" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="49" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/partials/nav.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="528">
-                  <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/css/footer.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="28" selection-start-line="28" selection-end-line="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/test.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4032">
-                  <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/rating.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="768">
-                  <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1392">
+              <caret line="58" column="72" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-360">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/ReviewsManager.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/partials/nav.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/destinations.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-72" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/autoload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -323,13 +156,16 @@
         <option value="$PROJECT_DIR$/js/rating.js" />
         <option value="$PROJECT_DIR$/views/test.php" />
         <option value="$PROJECT_DIR$/css/test.css" />
-        <option value="$PROJECT_DIR$/views/destinations.php" />
         <option value="$PROJECT_DIR$/partials/nav.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/css/footer.css" />
-        <option value="$PROJECT_DIR$/partials/footer.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/ReadMe.txt" />
+        <option value="$PROJECT_DIR$/partials/footer.php" />
+        <option value="$PROJECT_DIR$/admin.php" />
+        <option value="$PROJECT_DIR$/config/autoload.php" />
+        <option value="$PROJECT_DIR$/admin/admin.php" />
+        <option value="$PROJECT_DIR$/views/destinations.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -354,6 +190,21 @@
             <path>
               <item name="comparOperateur" type="b2602c69:ProjectViewProjectNode" />
               <item name="comparOperateur" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comparOperateur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comparOperateur" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comparOperateur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comparOperateur" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comparOperateur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comparOperateur" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -371,6 +222,21 @@
               <item name="comparOperateur" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="comparOperateur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="comparOperateur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+            <path>
+              <item name="comparOperateur" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="93831bfa-1a3c-4382-a53a-21adeb06b86f" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -379,6 +245,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -390,9 +257,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\program\laragon\www\simplon\Projets_groupe\comparOperateur\admin" />
       <recent name="D:\program\laragon\www\simplon\Projets_groupe\comparOperateur\views" />
     </key>
   </component>
@@ -422,18 +291,18 @@
       <workItem from="1592290970279" duration="16492000" />
       <workItem from="1592377651931" duration="1493000" />
       <workItem from="1592379227374" duration="8191000" />
-      <workItem from="1592394156165" duration="2162000" />
+      <workItem from="1592394156165" duration="13899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37845000" />
+    <option name="totallyTimeSpent" value="49582000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="32" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14941785" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17335059" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Code Time" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -454,7 +323,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Codota" order="3" />
       <window_info anchor="right" id="Scheme.REPL" order="4" side_tool="true" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32988358" />
       <window_info anchor="right" id="Armory" order="6" weight="0.32988358" />
     </layout>
   </component>
@@ -477,61 +346,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/nav.css" />
     <entry file="file://$PROJECT_DIR$/views/tour-operators.php" />
-    <entry file="file://$PROJECT_DIR$/views/destinations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/nav.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/test.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4032">
-          <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/rating.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" column="116" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="53" column="52" lean-forward="true" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-        </state>
-      </provider>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93831bfa-1a3c-4382-a53a-21adeb06b86f/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/readMe.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -542,8 +358,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/partials/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="144">
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/rating.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="148" column="35" lean-forward="true" selection-start-line="148" selection-start-column="35" selection-end-line="148" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/footer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/connection.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ReviewsManager.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Review.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/OperatorsManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Operator.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/DestinationsManager.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Destination.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/destinations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1392">
+          <caret line="58" column="72" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/nav.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
         </state>
       </provider>
     </entry>
