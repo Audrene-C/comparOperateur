@@ -1,16 +1,17 @@
 <?php
     if (isset($_POST['operator'])) {
     $path = str_replace('views', '', __DIR__);
-    //$path2 = "/simplon/Projets_groupe/comparOperateur";
-    // include($path.'/comparOperateur/config/autoload.php');
     include($path.'/config/autoload.php');
-    // include_once $path.'/comparOperateur/partials/connection.php';
     include_once $path.'/partials/connection.php';
     $operatorsManager = new OperatorsManager($pdo);
     $destinationsManager = new DestinationsManager($pdo);
+    $reviewsManager = new ReviewsManager($pdo);
     $id = intval($_POST['operator']);
     $operator = $operatorsManager->get($id);
     $destinations = $destinationsManager->getDestinationsByOperator($operator->getId());
+    if ($reviewsManager->get($operator->getId()) == true) {
+        $reviews = $reviewsManager->get($operator->getId());
+    }    
 ?>
 
     <!doctype html>
@@ -67,8 +68,25 @@
 
                             <form action="/apps/add-review.php" method="POST">
 
-                                <label for="rating">Want to rate this operator?</label>
-                                <input type="number" id="rating" name="rating" min="1" max="5">
+                                <div class="ratingDiv">
+                                    <label for="comment[rating]">Want to rate this operator?</label>
+                                    <div class="form-group">
+                                        <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                        <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
+
+                                        <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                        <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
+
+                                        <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                        <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
+
+                                        <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                        <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
+
+                                        <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                        <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                    </div>
+                                </div>
 
                                 <label for="author">Your name :</label>
                                 <input type="text" id="author" name="author">
@@ -107,10 +125,7 @@
     <?php
 } elseif (isset($_POST['search'])) {
     $path = str_replace('views', '', __DIR__);
-    //$path2 = "/simplon/Projets_groupe/comparOperateur";
-    // include($path.'/comparOperateur/config/autoload.php');
     include($path.'/config/autoload.php');
-    // include_once $path.'/comparOperateur/partials/connection.php';
     include_once $path.'/partials/connection.php';
     $operatorsManager = new OperatorsManager($pdo);
     $destinationsManager = new DestinationsManager($pdo);
@@ -173,8 +188,25 @@
 
                             <form action="/apps/add-review.php" method="POST">
 
-                                <label for="rating">Want to rate this operator?</label>
-                                <input type="number" id="rating" name="rating" min="1" max="5">
+                                <div class="ratingDiv">
+                                    <label for="comment[rating]">Want to rate this operator?</label>
+                                    <div class="form-group">
+                                        <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                        <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
+
+                                        <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                        <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
+
+                                        <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                        <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
+
+                                        <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                        <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
+
+                                        <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                        <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                    </div>
+                                </div>
 
                                 <label for="author">Your name :</label>
                                 <input type="text" id="author" name="author">
@@ -213,10 +245,7 @@
     <?php
 } else {
     $path = str_replace('views', '', __DIR__);
-    //$path2 = "/simplon/Projets_groupe/comparOperateur";
-    // include($path.'/comparOperateur/config/autoload.php');
     include($path.'/config/autoload.php');
-    // include_once $path.'/comparOperateur/partials/connection.php';
     include_once $path.'/partials/connection.php';
     $operatorsManager = new OperatorsManager($pdo);
     $operators = $operatorsManager->getList();
@@ -268,8 +297,25 @@
                                 
                                 <form action="/apps/add-review.php" method="POST">
 
-                                    <label for="rating">Want to rate this operator?</label>
-                                    <input type="number" id="rating" name="rating" min="1" max="5">
+                                    <div class="ratingDiv">
+                                        <label for="comment[rating]">Want to rate this operator?</label>
+                                        <div class="form-group">
+                                            <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                            <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
+
+                                            <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                            <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
+
+                                            <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                            <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
+
+                                            <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                            <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
+
+                                            <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                            <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                        </div>
+                                    </div>
 
                                     <label for="author">Your name :</label>
                                     <input type="text" id="author" name="author">

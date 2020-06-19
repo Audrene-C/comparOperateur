@@ -4,31 +4,8 @@ $path  = str_replace('apps', '', __DIR__);
 include($path.'/config/autoload.php');
 //include_once $path.'/comparOperateur/partials/connection.php';
 include_once $path.'/partials/connection.php';
-$reviewsManager = new ReviewsManager($pdo);
-$operatorsManager = new OperatorsManager($pdo);
 
-if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['message']) AND isset($_POST['comment']['rating'])) {
-    $operatorId = intval($_POST['operator']);
-    $author = $_POST['author'];
-    $message = $_POST['message'];
-    $newRating = intval($_POST['comment']['rating']);
-
-    $operator = $operatorsManager->get($operatorId);
-
-    $review = new Review(["message" => $message,
-                        "rating" => $newRating,
-                        "author" => $author,
-                        "id_tour_operator" => $operatorId]);
-    $reviewsManager->create($review);
-
-    $updatedRating = round($operatorsManager->calcAverageRating($operatorId));
-    $operatorsManager->updateRating($operator, intval($updatedRating));
-
-    header("Location: index.php");
-    exit();
-} else {
-    echo "zut";
-}
+var_dump($_POST['comment']['rating']);
 
 function prettyArray(array $nested_arrays): void
 {
