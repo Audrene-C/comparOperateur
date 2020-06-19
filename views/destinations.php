@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['location'])) {
-        $path = __DIR__;
+        $path = str_replace('views', '', __DIR__);
         //$path2 = "/simplon/Projets_groupe/comparOperateur";
         // include($path.'/comparOperateur/config/autoload.php');
         include('../config/autoload.php');
