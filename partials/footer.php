@@ -10,7 +10,7 @@
             <div class="col-6">
                 <a href="https://www.facebook.com/"><i class="fab fa-facebook fa-3x reseau"></i></a>
                 <a href="https://twitter.com/"><i class="fab fa-twitter fa-3x reseau"></i></a>
-                <a href="https://www.twitch.tv/sintica"><i class="fab fa-linkedin-in fa-3x reseau"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in fa-3x reseau"></i></a>
             </div>
         </div>
     </div>

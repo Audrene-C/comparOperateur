@@ -20,9 +20,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>ComparOperator</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/test.css">
         <link rel="stylesheet" href="../css/style.css" media="screen, handheld">
@@ -31,7 +31,7 @@
     <header>
         <?php
         //include $path.$path2.'/partials/nav.php';
-        include '../partials/nav.php';
+        include $path.'/partials/nav.php';
         ?>
     </header>
 
@@ -74,12 +74,12 @@
 
     <footer>
         <?php
-            //include $path.$path2.'/partials/footer.php';
-            include '../partials/footer.php';
+        //include $path.$path2.'/partials/footer.php';
+        include $path.'/partials/footer.php';
         ?>
     </footer>
 
-    <script src="../js/rating.js"></script>
+    <script src="<?= $path.'/js/rating.js' ?>"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -88,6 +88,5 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
     </html>
-    
-    <?php
-}
+
+<?php }
