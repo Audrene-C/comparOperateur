@@ -18,8 +18,10 @@ $path2 = "/simplon/Projets_groupe/comparOperateur";
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/rating.css">
     <link rel="stylesheet" href="../css/style.css" media="screen, handheld">
 </head>
 <body>
@@ -36,45 +38,36 @@ $path2 = "/simplon/Projets_groupe/comparOperateur";
                 <div class="card-operator card-1">
                     <div class="container">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-3">
                                 <img src="https://fakeimg.pl/250x100/" class="d-block w-100 img-operator" alt="...">
                             </div>
 
-                            <div class="col-6">
-                                <section class='rating-widget'>
+                            <div class="col-2">
+                                <label>Price:</label><br>
+                                <h3>800€</h3>
+                            </div>
+
+                            <div class="col-7 ratingDiv">
 
                                     <!-- Rating Stars Box -->
-                                    <div class='rating-stars text-center'>
-                                        <ul id='stars'>
-                                            <li class='star' title='Poor' data-value='1'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                            </li>
-                                            <li class='star' title='Fair' data-value='2'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                            </li>
-                                            <li class='star' title='Good' data-value='3'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                            </li>
-                                            <li class='star' title='Excellent' data-value='4'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                            </li>
-                                            <li class='star' title='WOW!!!' data-value='5'>
-                                                <i class='fa fa-star fa-fw'></i>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        <label>Rating:</label>
+                                        <div class="form-group">
+                                            <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                            <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
 
-                                    <div class='success-box'>
-                                        <div class='clearfix'></div>
-                                        <img alt='tick image' width='32' src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiM2QUMyNTk7IiBkPSJNMjEzLjMzMywwQzk1LjUxOCwwLDAsOTUuNTE0LDAsMjEzLjMzM3M5NS41MTgsMjEzLjMzMywyMTMuMzMzLDIxMy4zMzMgIGMxMTcuODI4LDAsMjEzLjMzMy05NS41MTQsMjEzLjMzMy0yMTMuMzMzUzMzMS4xNTcsMCwyMTMuMzMzLDB6IE0xNzQuMTk5LDMyMi45MThsLTkzLjkzNS05My45MzFsMzEuMzA5LTMxLjMwOWw2Mi42MjYsNjIuNjIyICBsMTQwLjg5NC0xNDAuODk4bDMxLjMwOSwzMS4zMDlMMTc0LjE5OSwzMjIuOTE4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K'/>
-                                        <div class='text-message'></div>
-                                        <div class='clearfix'></div>
-                                    </div>
+                                            <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                            <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
 
+                                            <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                            <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
 
+                                            <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                            <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
 
-                                </section>
-
+                                            <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                            <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                        </div>
+                                    <p id="numStar"></p>
                             </div>
                         </div>
                         <div class="row">
@@ -99,7 +92,7 @@ $path2 = "/simplon/Projets_groupe/comparOperateur";
     ?>
 </footer>
 
-<script src="<?= $path.$path2.'/js/rating.js' ?>"></script>
+<script src="../js/rating.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

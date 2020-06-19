@@ -4,6 +4,7 @@
 <!--start NAV-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <span><i class="fas fa-plane-departure fa-3x logo-icon"></i></span>
+    <h1 class="nav-tittle">ComparOperators</h1>
     <a class="navbar-brand btn btn-nav" href="/simplon/Projets_groupe/comparOperateur/index.php">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
