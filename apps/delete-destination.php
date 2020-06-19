@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT'];
+$path = __DIR__;
 // include($path.'/comparOperateur/config/autoload.php');
 include($path.'/config/autoload.php');
 // include_once $path.'/comparOperateur/partials/connection.php';
@@ -11,7 +11,8 @@ if (!empty($_POST['destination'])) {
 
     $destinationsManager->delete($destination);
     
-    header('admin.php');
+    header("Location: ".$path."/index.php");
+    exit();
 } else {
     echo "zut";
 }

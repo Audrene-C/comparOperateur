@@ -2,11 +2,9 @@
 
 function loadClass($class)
 {
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    $path2 = "/simplon/Projets_groupe/comparOperateur";
+    $path  = str_replace('config', '', __DIR__);
     //require_once('E:/laragon/www/comparOperateur/classes/'.$class.'.php');
-    require_once($path.$path2.'/classes/'.$class.'.php');
-
+    require_once($path.'/classes/'.$class.'.php');
 }
 
 

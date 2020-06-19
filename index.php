@@ -1,4 +1,10 @@
-
+<?php 
+    // include($path.'/comparOperateur/config/autoload.php');
+    include(__DIR__.'/config/autoload.php');
+    // include_once $path.'/comparOperateur/partials/connection.php';
+    include_once __DIR__.'/partials/connection.php';
+    $destinationsManager = new DestinationsManager($pdo);
+?>
 
 <!doctype html>
 <html lang="en">
@@ -14,6 +20,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/rating.css">
     <link rel="stylesheet" href="css/style.css" media="screen, handheld">
 </head>
 <body>
@@ -27,13 +34,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
+                <img src="img/bali3.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
+                <img src="img/havane3.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
+                <img src="img/tokyo3.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev carousel-swipe" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -50,34 +57,30 @@
 
 <main>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-2 col-sm-1">
-                <div class="card card-1">
-                    <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
-                    <span class="d2">
-                    <h1>Lorem</h1>
-                    <button class="btn btn-card"><a href="views/destinations.php">Voir plus</a></button>
-                </div>
-            </div>
+    <?php
+    $numOfCols = 3;
+    $rowCount = 0;
+    $destinations = $destinationsManager->getList();
 
-            <div class="col-lg-4 col-md-2 col-sm-1">
-                <div class="card card-1">
-                    <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
-                    <span class="d2">
-                    <h1>Lorem</h1>
-                    <button class="btn btn-card">Positive</button>
-                </div>
-            </div>
+    foreach ($destinations as $destination) {
 
-            <div class="col-lg-4 col-md-2 col-sm-1">
-                <div class="card card-1">
-                    <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
-                    <span class="d2">
-                    <h1>Lorem</h1>
-                    <button class="btn btn-card">Positive</button>
+        if($rowCount % $numOfCols == 0) { ?> <div class="row"> <?php } 
+            $rowCount++; ?>  
+                <div class="col-lg-4 col-md-2 col-sm-1">
+                    <div class="card card-1">
+                        <img src="img/<?php echo $destination->getImg_url_small(); ?>" class="d-block w-100" alt="...">
+                        <span class="d2">
+                        <h1><?php echo $destination->getLocation(); ?></h1>
+                        <form action="views/destinations.php" method="POST">
+                            <input type="hidden" id="location" name="location" value="<?php echo $destination->getLocation(); ?>">
+                            <input type="submit" class="btn btn-card" value="See more">
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </div>
+        <?php
+            if($rowCount % $numOfCols == 0 || $rowCount == count($destinations)) { ?> </div> <?php } 
+    }
+    ?>
     </div>
 </main>
 

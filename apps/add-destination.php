@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT'];
+$path  = str_replace('apps', '', __DIR__);
 //include($path.'/comparOperateur/config/autoload.php');
 include($path.'/config/autoload.php');
 //include_once $path.'/comparOperateur/partials/connection.php';
@@ -12,12 +12,40 @@ if (!empty($_POST['location']) AND !empty($_POST['price']) AND !empty($_POST['op
     $price = $_POST['price'];
     $operator = $_POST['operator'];
 
-    $destination = new Destination(["location" => $location,
-                            "price" => $price,
-                            "id_tour_operator" => $operator], $osef);
-    $destinationsManager->create($destination);
+    if (isset($_FILES['small-img']) AND $_FILES['small-img']['error'] == 0)
+    {
+        if ($_FILES['small-img']['size'] <= 1000000)
+        {
+                $infosfichier = pathinfo($_FILES['small-img']['name']);
+                $extension_upload = $infosfichier['extension'];
+                $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
+                if (in_array($extension_upload, $extensions_autorisees))
+                {
+                    move_uploaded_file($_FILES['small-img']['tmp_name'], 'uploads/' . basename($_FILES['small-img']['name']));
 
-    header('admin.php');
+                    if (isset($_FILES['large-img']) AND $_FILES['large-img']['error'] == 0)
+                    {
+                        if ($_FILES['large-img']['size'] <= 1000000)
+                        {
+                            $infosfichier = pathinfo($_FILES['large-img']['name']);
+                            $extension_upload = $infosfichier['extension'];
+                            $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
+                            if (in_array($extension_upload, $extensions_autorisees))
+                            {
+                                move_uploaded_file($_FILES['large-img']['tmp_name'], 'uploads/' . basename($_FILES['large-img']['name']));
+                            }
+                        }
+                    } 
+                    $destination = new Destination(["location" => $location,
+                    "price" => $price,
+                    "id_tour_operator" => $operator], $osef);
+                    $destinationsManager->create($destination);
+
+                    header("Location: ".$path."/index.php");
+                    exit();
+                }
+        }
+    }
 } else {
     echo "zut";
 }

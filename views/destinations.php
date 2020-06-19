@@ -1,15 +1,14 @@
 <?php
-if (isset($_POST['location'])) {
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    $path2 = "/simplon/Projets_groupe/comparOperateur";
-    //$path2 = "/simplon/Projets_groupe/comparOperateur";
-    // include($path.'/comparOperateur/config/autoload.php');
-    include($path.$path2.'/config/autoload.php');
-    // include_once $path.'/comparOperateur/partials/connection.php';
-    include_once $path.$path2.'/partials/connection.php';
-    $destinationsManager = new DestinationsManager($pdo);
-    $destinations = $destinationsManager->get($_POST['location']);
-    ?>
+    if (isset($_POST['location'])) {
+        $path = __DIR__;
+        //$path2 = "/simplon/Projets_groupe/comparOperateur";
+        // include($path.'/comparOperateur/config/autoload.php');
+        include('../config/autoload.php');
+        // include_once $path.'/comparOperateur/partials/connection.php';
+        include_once '../partials/connection.php';
+        $destinationsManager = new DestinationsManager($pdo);
+        $destinations = $destinationsManager->get($_POST['location']);
+        ?>
 
     <!doctype html>
     <html lang="en">
@@ -38,7 +37,7 @@ if (isset($_POST['location'])) {
 
 
     <main>
-        <div class="container">
+        <div class="container">                
             <div class="row">
                 <div class="col-12">
                     <img src="https://fakeimg.pl/250x100/" class="d-block w-100 img-operator" alt="...">
@@ -48,30 +47,28 @@ if (isset($_POST['location'])) {
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi, consectetur corporis delectus dolor dolores earum enim exercitationem fugiat itaque laborum nihil placeat repellat rerum saepe sint sit, ullam vero.</p>
                 </div>
                 <div class="col-12">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <ul>
-                                    <?php
+                    <div class="row">
+                        <div class="col-12">
+                            <ul>
+                                <?php
                                     foreach ($destinations as $destination) {
                                         $operator = $destination->getOperator();
                                         ?>
                                         <li>
-                                            <p>Travel with <?php echo $operator->getName(); ?> for <?php echo $destination->getPrice(); ?> $</p>
+                                            <p>Travel with <?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients, for <?php echo $destination->getPrice(); ?> $</p>
                                             <form action="operators.php" method="POST">
                                                 <input type="hidden" id="operator" name="operator" value="<?php echo $operator->getId(); ?>">
-                                                <input type="submit" class="btn btn-card" value="See more">
+                                                <input type="submit" class="btn" value="See more">
                                             </form>
                                         </li>
                                         <?php
-                                    }
-                                    ?>
-                                </ul>
-                            </div>
+                                    } 
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </main>
 
