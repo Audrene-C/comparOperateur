@@ -16,10 +16,12 @@ class DestinationsManager
 
     public function create(Destination $destination)
     {
-        $req = $this->pdo->prepare('INSERT INTO destinations(location, price, id_tour_operator) VALUES(:location, :price, :id_tour_operator)');
+        $req = $this->pdo->prepare('INSERT INTO destinations(location, price, img_url_small, img_url_large, id_tour_operator) VALUES(:location, :price, :img_url_small, :img_url_large, :id_tour_operator)');
         $req->execute(array(
             'location' => $destination->getLocation(),
             'price' => $destination->getPrice(),
+            'img_url_small' => $destination->getImg_url_small(),
+            'img_url_large' => $destination->getImg_url_large(),
             'id_tour_operator' => $destination->getId_tour_operator()
             ));
 
@@ -67,6 +69,21 @@ class DestinationsManager
         while ($data = $req->fetch(PDO::FETCH_ASSOC))
         {
             array_push($destinations, new Destination($data, $osef));
+        }
+        
+        return $destinations;
+    }
+
+    public function getAll()
+    {    
+        $destinations = [];
+        $req = $this->pdo->query('SELECT * FROM destinations');
+        while ($data = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
+            $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
+            $operator = new Operator($dataOperator);
+            array_push($destinations, new Destination($data, $operator));
         }
         
         return $destinations;

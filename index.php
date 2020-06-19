@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/rating.css">
     <link rel="stylesheet" href="css/style.css" media="screen, handheld">
 </head>
 <body>
@@ -33,13 +34,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
+                <img src="img/bali3.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
+                <img src="img/havane3.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
+                <img src="img/tokyo3.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev carousel-swipe" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -67,7 +68,7 @@
             $rowCount++; ?>  
                 <div class="col-lg-4 col-md-2 col-sm-1">
                     <div class="card card-1">
-                        <img src="https://fakeimg.pl/250x100/" class="d-block w-100" alt="...">
+                        <img src="img/<?php echo $destination->getImg_url_small(); ?>" class="d-block w-100" alt="...">
                         <span class="d2">
                         <h1><?php echo $destination->getLocation(); ?></h1>
                         <form action="views/destinations.php" method="POST">

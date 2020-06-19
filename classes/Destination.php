@@ -5,6 +5,8 @@ class Destination
     protected $id;
     protected $location;
     protected $price;
+    protected $img_url_small;
+    protected $img_url_large;
     protected $id_tour_operator;
     protected $operator;
 
@@ -40,6 +42,26 @@ class Destination
     public function getPrice()
     {
         return ($this->price);
+    }
+
+    ///// get and setter for img_url_small /////
+    public function setImg_url_small(string $img_url_small)
+    {      
+        $this->img_url_small = $img_url_small;
+    }
+    public function getImg_url_small()
+    {
+        return ($this->img_url_small);
+    }
+
+    ///// get and setter for img_url_large /////
+    public function setImg_url_large(string $img_url_large)
+    {      
+        $this->img_url_large = $img_url_large;
+    }
+    public function getImg_url_large()
+    {
+        return ($this->img_url_large);
     }
 
     ///// get and setter for id_tour_operator /////

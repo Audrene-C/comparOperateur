@@ -45,6 +45,11 @@
                     <div class="col-12">
                         <img src="https://fakeimg.pl/250x100/" class="d-block w-100 img-operator" alt="...">
                         <h1><?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients</h1>
+                        <?php 
+                            if ($operator->getIs_premium() == 1) {
+                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
+                            }
+                        ?>
                     </div>
                     <div class="row">
                         <div class="col-12">
@@ -146,6 +151,11 @@
                     <div class="col-12">
                         <img src="https://fakeimg.pl/250x100/" class="d-block w-100 img-operator" alt="...">
                         <h1><?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients</h1>
+                        <?php 
+                            if ($operator->getIs_premium() == 1) {
+                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
+                            }
+                        ?>
                     </div>
                     <div class="row">
                         <div class="col-12">
@@ -247,6 +257,11 @@
                         <div class="col-12">
                             <img src="https://fakeimg.pl/250x100/" class="d-block w-100 img-operator" alt="...">
                             <h1><?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients</h1>
+                            <?php 
+                            if ($operator->getIs_premium() == 1) {
+                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
+                            }
+                        ?>
                         </div>
                         <div class="row">
                             <div class="col-12">

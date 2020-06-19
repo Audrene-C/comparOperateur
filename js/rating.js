@@ -1,57 +1,77 @@
-$(document).ready(function(){
+// ==========================
+//      Stars Rating
+// ==========================
 
-    /* 1. Visualizing things on Hover - See next part for action on click */
-    $('#stars li').on('mouseover', function(){
-        var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+// check if there is a rating stars div on the page
+if(document.querySelector(".starIcon1") != undefined){
 
-        // Now highlight all the stars that's not after the current hovered star
-        $(this).parent().children('li.star').each(function(e){
-            if (e < onStar) {
-                $(this).addClass('hover');
-            }
-            else {
-                $(this).removeClass('hover');
-            }
-        });
+    // initialize the rating stars list as a global variable to reuse it later
+    let stars = [];
 
-    }).on('mouseout', function(){
-        $(this).parent().children('li.star').each(function(e){
-            $(this).removeClass('hover');
-        });
-    });
-
-
-    /* 2. Action to perform on click */
-    $('#stars li').on('click', function(){
-        var onStar = parseInt($(this).data('value'), 10); // The star currently selected
-        var stars = $(this).parent().children('li.star');
-
-        for (i = 0; i < stars.length; i++) {
-            $(stars[i]).removeClass('selected');
+    // init the stars query selectors
+    function starQueryInit(){
+        // create the querySelector of each 5 stars and push it to the stars list
+        for(let i=1; i <= 5; i++){
+            stars.push(document.querySelector(".starIcon"+i));
         }
+    }
 
-        for (i = 0; i < onStar; i++) {
-            $(stars[i]).addClass('selected');
+    // remove the clickedStar class on every stars
+    function removeClickedStar(){
+        for(let i = 0; i < stars.length; i++){
+            stars[i].classList.remove("clickedStar");
         }
+    }
 
-        // JUST RESPONSE (Not needed)
-        var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-        var msg = "";
-        if (ratingValue > 1) {
-            msg = "Thanks! You rated this " + ratingValue + " stars.";
+    // add the clickedStar function when clicked and check his radio button
+    function addClickedStar(numStar){
+        // clickedStar function when clicked
+        for(let i = 0; i < numStar; i++){
+            stars[i].classList.add("clickedStar");
         }
-        else {
-            msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+        // check his radio button
+        document.querySelector("input[type=radio].star"+numStar).checked = true;
+        let checkedValue = document.querySelector('input[name="comment[rating]"]:checked').value;
+        // console.log(checkedValue);
+    }
+
+    // translate hover effect
+    function translateHover(numStar, translateY){
+        for(let i = 0; i < numStar; i++){
+            stars[i].style.transform = translateY;
         }
-        responseMessage(msg);
+    }
 
-    });
+    function createRatingEventListeners(){
+        // create the translateY up and down values
+        let translateLst = ["translateY(-5px)", "translateY(0px)"];
+        // iterate over the stars and add event listeners
+        for(let i = 0; i < stars.length; i++){
+            // set the number of star value
+            let numStar = i+1;
 
+            // hover effect translateY up and down
+            // add the up translateY hover effect
+            stars[i].addEventListener("mouseover", ()=>{
+                translateHover(numStar, translateLst[0]);
+            });
+            // add the up translateY hover effect
+            stars[i].addEventListener("mouseout", ()=>{
+                translateHover(numStar, translateLst[1]);
+            });
 
-});
+            // click event listener (change color and check the radio button)
+            stars[i].addEventListener("click", ()=> {
+                // remove all the clickedStar
+                removeClickedStar();
+                // add clickedStar and check his radio button
+                addClickedStar(numStar);
+            });
+        }
+    }
 
-
-function responseMessage(msg) {
-    $('.success-box').fadeIn(200);
-    $('.success-box div.text-message').html("<span>" + msg + "</span>");
+    // init the stars query selectors
+    starQueryInit();
+    // create the events listeners
+    createRatingEventListeners();
 }
