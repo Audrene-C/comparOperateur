@@ -7,11 +7,11 @@
     $destinationsManager = new DestinationsManager($pdo);
     $reviewsManager = new ReviewsManager($pdo);
     $id = intval($_POST['operator']);
-    $operator = $operatorsManager->get($id);
-    $destinations = $destinationsManager->getDestinationsByOperator($operator->getId());
+    $destinations = $destinationsManager->getDestinationsByOperator($id);
+    $operator = $destinations[0]->getOperator();
     if ($reviewsManager->get($operator->getId()) == true) {
         $reviews = $reviewsManager->get($operator->getId());
-    }    
+    }
 ?>
 
     <!doctype html>
@@ -99,6 +99,37 @@
                                 <input type="submit" value="Send">
                             </form>
 
+                            <div class="comments-container">
+                                <h3>Comentaires</h3>
+
+                                <ul id="comments-list" class="comments-list">
+                                    <?php 
+                                        foreach ($reviews as $review) {
+                                    ?>
+                                            <li>
+                                                <div class="comment-main-level">
+                                                    <!-- Avatar -->
+                                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+                                                    <!-- Contenedor del Comentario -->
+                                                    <div class="comment-box">
+                                                        <div class="comment-head">
+                                                            <h6 class="comment-name by-author"><?php echo $review->getAuthor(); ?></a></h6>
+                                                            <span>20 minutes ago</span>
+                                                            <i class="fa fa-reply"></i>
+                                                            <i class="fa fa-heart"></i>
+                                                        </div>
+                                                        <div class="comment-content">
+                                                            <?php echo $review->getMessage(); ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                    <?php
+                                        }
+                                    ?>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                 </div> 
@@ -129,9 +160,13 @@
     include_once $path.'/partials/connection.php';
     $operatorsManager = new OperatorsManager($pdo);
     $destinationsManager = new DestinationsManager($pdo);
+    $reviewsManager = new ReviewsManager($pdo);
     $name = $_POST['search'];
-    $operator = $operatorsManager->get($name);
-    $destinations = $destinationsManager->getDestinationsByOperator($operator->getId());
+    $destinations = $destinationsManager->getDestinationsByOperator($name);
+    $operator = $destinations[0]->getOperator();
+    if ($reviewsManager->get($operator->getId()) == true) {
+        $reviews = $reviewsManager->get($operator->getId());
+    }
     ?>
 
     <!doctype html>
@@ -218,6 +253,37 @@
 
                                 <input type="submit" value="Send">
                             </form>
+
+                            <div class="comments-container">
+                                <h3>Comentaires</h3>
+
+                                <ul id="comments-list" class="comments-list">
+                                    <?php 
+                                        foreach ($reviews as $review) {
+                                    ?>
+                                            <li>
+                                                <div class="comment-main-level">
+                                                    <!-- Avatar -->
+                                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+                                                    <!-- Contenedor del Comentario -->
+                                                    <div class="comment-box">
+                                                        <div class="comment-head">
+                                                            <h6 class="comment-name by-author"><?php echo $review->getAuthor(); ?></a></h6>
+                                                            <span>20 minutes ago</span>
+                                                            <i class="fa fa-reply"></i>
+                                                            <i class="fa fa-heart"></i>
+                                                        </div>
+                                                        <div class="comment-content">
+                                                            <?php echo $review->getMessage(); ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                    <?php
+                                        }
+                                    ?>
+                                </ul>
+                            </div>
 
                         </div>
                     </div>

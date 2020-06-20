@@ -65,10 +65,14 @@ class DestinationsManager
     {    
         $destinations = [];
         $osef = new Operator(['osef', 1, 'osef', 0]);
-        $req = $this->pdo->query('SELECT * FROM destinations GROUP BY location');
-        while ($data = $req->fetch(PDO::FETCH_ASSOC))
+        $req = $this->pdo->query('SELECT DISTINCT location FROM destinations');
+        $datas = $req->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($datas as $data)
         {
-            array_push($destinations, new Destination($data, $osef));
+            $req = $this->pdo->prepare('SELECT * FROM destinations WHERE location = :location');
+            $req->execute([':location' => $data["location"]]);
+            $result = $req->fetch(PDO::FETCH_ASSOC);
+            array_push($destinations, new Destination($result, $osef));
         }
         
         return $destinations;
@@ -89,20 +93,38 @@ class DestinationsManager
         return $destinations;
     }
 
-    public function getDestinationsByOperator(int $id) {
+    public function getDestinationsByOperator($info) {
 
         $destinations = [];
 
-        $req = $this->pdo->prepare('SELECT * FROM destinations WHERE id_tour_operator = :id_tour_operator');
-        $req->execute([':id_tour_operator' => $id]);
+        if (is_int($info)) {
+            $req = $this->pdo->prepare('SELECT * FROM destinations WHERE id_tour_operator = :id_tour_operator');
+            $req->execute([':id_tour_operator' => $info]);
 
-        while ($data = $req->fetch(PDO::FETCH_ASSOC))
-        {
-            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
-            $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
-            $operator = new Operator($dataOperator);
-            array_push($destinations, new Destination($data, $operator));
+            while ($data = $req->fetch(PDO::FETCH_ASSOC))
+            {
+                $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
+                $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
+                $operator = new Operator($dataOperator);
+                array_push($destinations, new Destination($data, $operator));
+            }
+        } else {
+            $req = $this->pdo->prepare('SELECT * FROM tour_operators WHERE name = :name');
+            $req->execute([':name' => $info]);
+            $data = $req->fetch(PDO::FETCH_ASSOC);
+
+            $req = $this->pdo->prepare('SELECT * FROM destinations WHERE id_tour_operator = :id_tour_operator');
+            $req->execute([':id_tour_operator' => $data['id']]);
+
+            while ($data = $req->fetch(PDO::FETCH_ASSOC))
+            {
+                $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
+                $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
+                $operator = new Operator($dataOperator);
+                array_push($destinations, new Destination($data, $operator));
+            }
         }
+        
         
         return $destinations;
     }
