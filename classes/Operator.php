@@ -6,6 +6,7 @@ class Operator
     protected $name;
     protected $rating;
     protected $link;
+    protected $image;
     protected $is_premium;
 
     ///// get and setter for id /////
@@ -50,6 +51,16 @@ class Operator
     public function getLink()
     {
         return ($this->link);
+    }
+
+    ///// get and setter for image /////
+    public function setImage($image)
+    {      
+        $this->image = $image;
+    }
+    public function getImage()
+    {
+        return ($this->image);
     }
 
     ///// get and setter for is_premium /////
