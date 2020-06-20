@@ -24,8 +24,8 @@ if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['m
     $updatedRating = round($operatorsManager->calcAverageRating($operatorId));
     $operatorsManager->updateRating($operator, intval($updatedRating));
 
-    header("Location: index.php");
-    exit();
+    // header("Location: index.php");
+    // exit();
 } else {
     echo "zut";
 }

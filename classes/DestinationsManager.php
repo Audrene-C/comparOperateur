@@ -91,7 +91,6 @@ class DestinationsManager
 
     public function getDestinationsByOperator(int $id) {
 
-        $osef = new Operator(['osef', 1, 'osef', 0]);
         $destinations = [];
 
         $req = $this->pdo->prepare('SELECT * FROM destinations WHERE id_tour_operator = :id_tour_operator');
@@ -99,7 +98,10 @@ class DestinationsManager
 
         while ($data = $req->fetch(PDO::FETCH_ASSOC))
         {
-            array_push($destinations, new Destination($data, $osef));
+            $reqOperator = $this->pdo->query('SELECT * FROM tour_operators WHERE id = '.$data['id_tour_operator']);
+            $dataOperator = $reqOperator->fetch(PDO::FETCH_ASSOC);
+            $operator = new Operator($dataOperator);
+            array_push($destinations, new Destination($data, $operator));
         }
         
         return $destinations;
