@@ -1,17 +1,11 @@
 <?php 
     $path = $_SERVER['DOCUMENT_ROOT'];
-    $path2 = "/simplon/Projets_groupe/comparOperateur";
-    // include($path.'/comparOperateur/config/autoload.php');
-include_once $path.$path2.'/partials/connection.php';
-/*include($path.'/config/autoload.php');*/
-include($path.$path2.'/config/autoload.php');
-// include_once $path.'/comparOperateur/partials/connection.php';
-/* include_once $path.'/partials/connection.php';*/
-
-
+    include($path.'/comparOperateur/config/autoload.php');
+    //include($path.'/config/autoload.php');
+    include_once $path.'/comparOperateur/partials/connection.php';
+    //include_once $path.'/partials/connection.php';
     $operatorsManager = new OperatorsManager($pdo);
     $destinationsManager = new DestinationsManager($pdo);
-    $reviewsManager = new ReviewsManager($pdo);
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +15,13 @@ include($path.$path2.'/config/autoload.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     
     <div id="add-operator">
         <h3>Add an operator</h3>
-        <form action="../apps/add-operator.php" method="POST">
+        <form action="apps/add-operator.php" method="POST">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name"><br>
 
@@ -55,7 +49,7 @@ include($path.$path2.'/config/autoload.php');
     </div>
 
     <div id="add-premium">
-        <form action="../apps/add-premium.php" method="POST">
+        <form action="apps/add-premium.php" method="POST">
             <h3>Add premium to an existing operator</h3>
             <label for="add-premium">Choose an operator:</label>
 
@@ -76,12 +70,18 @@ include($path.$path2.'/config/autoload.php');
     <div id="add-destination">
         <h3>Add a destination</h3>
 
-        <form action="../apps/add-destination.php" method="POST">
+        <form action="apps/add-destination.php" method="POST" enctype="multipart/form-data">
             <label for="location">Location:</label><br>
             <input type="text" id="location" name="location"><br>
 
             <label for="price">Price:</label><br>
             <input type="number" id="price" name="price"><br>
+
+            <label for="small-img">Choose a small image:</label><br>
+            <input type="file" name="small-img"><br>
+
+            <label for="large-img">Choose a large image:</label><br>
+            <input type="file" name="large-img"><br>
 
             <label for="operator">Choose an operator:</label>
 
@@ -123,7 +123,7 @@ include($path.$path2.'/config/autoload.php');
                 $id = intval($_GET['operator']);
                 $operator = $operatorsManager->get($id);
                 ?> 
-                <form action="../apps/modify-operator.php" method="POST">
+                <form action="apps/modify-operator.php" method="POST">
 
                 <input type="hidden" id="id" name="id" value="<?php echo $operator->getId(); ?>"><br>
 
@@ -163,10 +163,11 @@ include($path.$path2.'/config/autoload.php');
             <select name="destination" id="destination">
                 <option value=""></option>
                 <?php 
-                    $destinations = $destinationsManager->getList();
+                    $destinations = $destinationsManager->getAll();
 
                     foreach ($destinations as $destination) {
-                        ?> <option value="<?php echo $destination->getId(); ?>"><?php echo $destination->getLocation(); ?></option> <?php
+                        $operator = $destination->getOperator();
+                        ?> <option value="<?php echo $destination->getId(); ?>"><?php echo $destination->getLocation(); ?> with <?php echo $operator->getName(); ?></option> <?php
                     }
                 ?>
             </select>
@@ -179,7 +180,7 @@ include($path.$path2.'/config/autoload.php');
                 $id = intval($_GET['destination']);
                 $destination = $destinationsManager->get($id);
                 ?> 
-                <form action="../apps/modify-destination.php" method="POST">
+                <form action="apps/modify-destination.php" method="POST" enctype="multipart/form-data">
 
                 <input type="hidden" id="id" name="id" value="<?php echo $destination->getId(); ?>"><br>
 
@@ -202,7 +203,7 @@ include($path.$path2.'/config/autoload.php');
     <div id="delete-operator">
         <h3>Delete an operator</h3>
 
-        <form action="../apps/delete-operator.php" method="POST">
+        <form action="apps/delete-operator.php" method="POST">
         <label for="operator">Choose an operator:</label>
 
         <select name="operator" id="operator">
@@ -223,17 +224,16 @@ include($path.$path2.'/config/autoload.php');
     <div id="delete-destination">
         <h3>Delete a destination</h3>
 
-        <form action="../apps/delete-destination.php" method="POST">
+        <form action="apps/delete-destination.php" method="POST">
         <label for="destination">Choose a destination:</label>
 
         <select name="destination" id="destination">
             <?php 
-                $destinations = $destinationsManager->getList();
+                $destinations = $destinationsManager->getAll();
 
                 foreach ($destinations as $destination) {
                     $operator = $destination->getOperator();
-                    $operatorName = $operator->getName();
-                    ?> <option value="<?php echo $destination->getId(); ?>"><?php echo $destination->getLocation(); ?> with <?php echo $operatorName; ?></option> <?php
+                    ?> <option value="<?php echo $destination->getId(); ?>"><?php echo $destination->getLocation(); ?> with <?php echo $operator->getName(); ?></option> <?php
                 }
             ?>
         </select>

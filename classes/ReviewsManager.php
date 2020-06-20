@@ -31,15 +31,23 @@ class ReviewsManager
 
     public function get($info)
     {
+        $reviews = [];
+
         if(is_int($info)) {
             $req = $this->pdo->query('SELECT * FROM reviews WHERE id_tour_operator = '.$info);
-            $data = $req->fetch(PDO::FETCH_ASSOC);
+            while ($data = $req->fetch(PDO::FETCH_ASSOC))
+            {
+                array_push($reviews, new Review($data));
+            }
         } else {
             $req = $this->pdo->prepare('SELECT * FROM reviews WHERE author = :author');
             $req->execute([':author' => $info]);
-            $data = $req->fetch(PDO::FETCH_ASSOC);
+            while ($data = $req->fetch(PDO::FETCH_ASSOC))
+            {
+                array_push($reviews, new Review($data));
+            }
         }
-        return new Review($data);
+        return $reviews;
     }
 
     public function delete(Review $review)
