@@ -1,8 +1,9 @@
-<?php 
-    // include($path.'/comparOperateur/config/autoload.php');
-    include(__DIR__.'/config/autoload.php');
-    // include_once $path.'/comparOperateur/partials/connection.php';
-    include_once __DIR__.'/partials/connection.php';
+<?php
+    $path = __DIR__;
+    include($path.'/config/autoload.php');
+    /*include(__DIR__.'/config/autoload.php');*/
+    include_once $path.'/partials/connection.php';
+    /*include_once __DIR__.'/partials/connection.php';*/
     $destinationsManager = new DestinationsManager($pdo);
 ?>
 
@@ -14,7 +15,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ComparOperator</title>
+    <title>ComparOperators</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -34,13 +35,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/bali3.jpg" class="d-block w-100" alt="...">
+                <img src="img/bali3.jpg" class="d-block w-100 carousel-img" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/havane3.jpg" class="d-block w-100" alt="...">
+                <img src="img/havane3.jpg" class="d-block w-100 carousel-img" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="img/tokyo3.jpg" class="d-block w-100" alt="...">
+                <img src="img/tokyo3.jpg" class="d-block w-100 carousel-img" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev carousel-swipe" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -68,7 +69,7 @@
             $rowCount++; ?>  
                 <div class="col-lg-4 col-md-2 col-sm-1">
                     <div class="card card-1">
-                        <img src="img/<?php echo $destination->getImg_url_small(); ?>" class="d-block w-100" alt="...">
+                        <img src="img/<?php echo $destination->getImg_url_small(); ?>" class="d-block w-100 img-size" alt="...">
                         <span class="d2">
                         <h1><?php echo $destination->getLocation(); ?></h1>
                         <form action="views/destinations.php" method="POST">
