@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbe5b333-e0f6-464e-bb00-b3aca7d44d9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operator-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/operator-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/destinations.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,10 +67,10 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5689655">
+    <splitter split-orientation="horizontal" split-proportion="0.73458445">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="288">
@@ -95,6 +93,15 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-285">
                   <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/destinations.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -158,13 +165,13 @@
         <option value="$PROJECT_DIR$/css/comment.css" />
         <option value="$PROJECT_DIR$/partials/connection.php" />
         <option value="$PROJECT_DIR$/css/test.css" />
-        <option value="$PROJECT_DIR$/views/destinations.php" />
         <option value="$PROJECT_DIR$/css/operator-admin.css" />
         <option value="$PROJECT_DIR$/admin/admin.php" />
         <option value="$PROJECT_DIR$/css/admin.css" />
         <option value="$PROJECT_DIR$/operator-admin.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/views/destinations.php" />
       </list>
     </option>
   </component>
@@ -196,6 +203,11 @@
               <item name="comparOperateur" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="D:\program\laragon\www\simplon\Projets_groupe\comparOperateur" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="comparOperateur" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\program\laragon\www\simplon\Projets_groupe\comparOperateur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -265,18 +277,18 @@
       <workItem from="1592552375124" duration="5081000" />
       <workItem from="1592677640461" duration="24000" />
       <workItem from="1592677761104" duration="27000" />
-      <workItem from="1592678384336" duration="3244000" />
+      <workItem from="1592678384336" duration="3489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72120000" />
+    <option name="totallyTimeSpent" value="72365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="307" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498708" visible="true" weight="0.21362941" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498708" visible="true" weight="0.1431853" />
       <window_info id="Structure" order="1" sideWeight="0.501292" side_tool="true" weight="0.17141008" />
       <window_info id="Code Time" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -423,13 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/destinations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/comment.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -474,6 +479,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/destinations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
