@@ -18,11 +18,19 @@ span{
 
 
 .carousel{
-    height: 450px;
+    height: 490px;
 }
 
 .carousel-item{
-    height: 450px;
+    height: 490px;
+    width: 70%;
+    margin-left: 15%;
+
+}
+
+.carousel-img{
+    width: 350px;
+    height: 590px;
 }
 
 .carousel-swipe{

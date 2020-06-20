@@ -22,7 +22,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
             <h1>Admin Operator Page</h1>
             <div class="card box effect">
                 <div id="add-destination">
@@ -53,7 +53,7 @@
     </div>
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
             <div class="card box-4 effect">
                 <div id="modify-operator">
                     <h3 class="card-header">Modify your info</h3>
@@ -81,7 +81,7 @@
     </div>
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
             <div class="card box-2 effect">
                 <div id="modify-destination">
                     <h3 class="card-header">Modify a destination</h3>
