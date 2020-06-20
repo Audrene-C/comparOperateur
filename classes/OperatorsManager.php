@@ -16,11 +16,12 @@ class OperatorsManager
 
     public function create(Operator $operator)
     {
-        $req = $this->pdo->prepare('INSERT INTO tour_operators(name, rating, link, is_premium) VALUES(:name, :rating, :link, :is_premium)');
+        $req = $this->pdo->prepare('INSERT INTO tour_operators(name, rating, link, image, is_premium) VALUES(:name, :rating, :link, :image, :is_premium)');
         $req->execute(array(
             'name' => $operator->getName(),
             'rating' => $operator->getRating(),
             'link' => $operator->getLink(),
+            'image' => $operator->getImage(),
             'is_premium' => $operator->getIs_premium()
             ));
 
@@ -36,11 +37,12 @@ class OperatorsManager
     }
 
     public function update(Operator $operator) {
-        $req = $this->pdo->prepare('UPDATE tour_operators SET name = :name, rating = :rating, link = :link, is_premium = :is_premium WHERE id = :id');
+        $req = $this->pdo->prepare('UPDATE tour_operators SET name = :name, rating = :rating, link = :link, image = :image, is_premium = :is_premium WHERE id = :id');
         $req->execute(array(
             ':name' => $operator->getName(),
             ':rating' => $operator->getRating(),
             ':link' => $operator->getLink(),
+            'image' => $operator->getImage(),
             ':is_premium' => $operator->getIs_premium(),
             ':id' => $operator->getId()
             ));
@@ -77,7 +79,7 @@ class OperatorsManager
 
         $operators = [];
 
-        $req = $this->pdo->prepare('SELECT tour_operators.id, tour_operators.name, tour_operators.rating, tour_operators.link, tour_operators.is_premium FROM tour_operators INNER JOIN destinations ON tour_operators.id = destinations.id_tour_operator WHERE location = :location');
+        $req = $this->pdo->prepare('SELECT tour_operators.id, tour_operators.name, tour_operators.rating, tour_operators.link, tour_operators.image, tour_operators.is_premium FROM tour_operators INNER JOIN destinations ON tour_operators.id = destinations.id_tour_operator WHERE location = :location');
         $req->execute([':location' => $name]);
 
         while ($data = $req->fetch(PDO::FETCH_ASSOC))

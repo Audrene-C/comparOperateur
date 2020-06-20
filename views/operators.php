@@ -7,11 +7,9 @@
     $destinationsManager = new DestinationsManager($pdo);
     $reviewsManager = new ReviewsManager($pdo);
     $id = intval($_POST['operator']);
+    $operator = $operatorsManager->get($id);
     $destinations = $destinationsManager->getDestinationsByOperator($id);
-    $operator = $destinations[0]->getOperator();
-    if ($reviewsManager->get($operator->getId()) == true) {
-        $reviews = $reviewsManager->get($operator->getId());
-    }
+    $reviews = $reviewsManager->get($id);
 ?>
 
     <!doctype html>
@@ -32,6 +30,7 @@
         <link rel="stylesheet" href="../css/rating.css">
         <link rel="stylesheet" href="../css/style.css" media="screen, handheld">
         <link rel="stylesheet" href="../css/comment.css">
+
     </head>
     <body>
         <header>
@@ -43,99 +42,75 @@
 
 
         <main>
-            <div class="container">                
+
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <img src="https://fakeimg.pl/250x100/" class="d-block w-100 img-operator" alt="...">
-                        <h1><?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients</h1>
-                        <?php 
-                            if ($operator->getIs_premium() == 1) {
-                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
-                            }
-                        ?>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <ul>
-                                <?php
-                                    foreach ($destinations as $destination) {
-                                        ?>
-                                        <li>
-                                            <p>Travel to <?php echo $destination->getLocation(); ?> for <?php echo $destination->getPrice(); ?> $</p>
-                                        </li>
-                                        <?php
-                                    } 
-                                ?>
-                            </ul>
+                        <div class="card-operator card-1">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="<?php echo $destination->getImg_url_large(); ?>" class="d-block w-100 img-operator" alt="...">
+                                    </div>
 
-                            <form action="/apps/add-review.php" method="POST">
+                                    <div class="col-2">
+                                    <?php
+                                        foreach ($destinations as $destination) {
+                                    ?>
+                                        <label>Price:</label><br>
+                                        <h3><?php echo $destination->getLocation(); ?> for <?php echo $destination->getPrice(); ?> $</h3>
+                                    <?php
+                                        } 
+                                    ?>
+                                    </div>
 
-                                <div class="ratingDiv">
-                                    <label for="comment[rating]">Want to rate this operator?</label>
-                                    <div class="form-group">
-                                        <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
-                                        <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
+                                    <div class="col-7 ratingDiv">
+                                        <!-- Rating Stars Box -->
+                                            <label>Rating:</label>
+                                            <div class="form-group">
+                                                <input class="<?php if($operator->getRating() <= 1) {echo 'clickedStar';}?> star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                                <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
 
-                                        <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
-                                        <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
+                                                <input class="<?php if($operator->getRating() <= 2) {echo 'clickedStar';}?> star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                                <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
 
-                                        <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
-                                        <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
+                                                <input class="<?php if($operator->getRating() <= 3) {echo 'clickedStar';}?> star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                                <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
 
-                                        <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
-                                        <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
+                                                <input class="<?php if($operator->getRating() <= 4) {echo 'clickedStar';}?> star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                                <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
 
-                                        <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
-                                        <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                                <input class="<?php if($operator->getRating() <= 5) {echo 'clickedStar';}?> star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                                <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                            </div>
+                                        <p id="numStar"></p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h1><?php echo $operator->getName(); ?></h1>
+                                        <p>
+                                        <?php 
+                                            if ($operator->getIs_premium() == 1) {
+                                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
+                                            }
+                                        ?>
+                                        </p>
+                                    </div>
 
-                                <label for="author">Your name :</label>
-                                <input type="text" id="author" name="author">
-
-                                <label for="message">Leave a comment :</label>
-                                <input type="text" id="message" name="message">
-
-                                <input type="hidden" id="operator" name="operator" value="<?php echo $operator->getId(); ?>">
-
-                                <input type="submit" value="Send">
-                            </form>
-
-                            <div class="comments-container">
-                                <h3>Comentaires</h3>
-
-                                <ul id="comments-list" class="comments-list">
-                                    <?php 
-                                        foreach ($reviews as $review) {
-                                    ?>
-                                            <li>
-                                                <div class="comment-main-level">
-                                                    <!-- Avatar -->
-                                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                                                    <!-- Contenedor del Comentario -->
-                                                    <div class="comment-box">
-                                                        <div class="comment-head">
-                                                            <h6 class="comment-name by-author"><?php echo $review->getAuthor(); ?></a></h6>
-                                                            <span>20 minutes ago</span>
-                                                            <i class="fa fa-reply"></i>
-                                                            <i class="fa fa-heart"></i>
-                                                        </div>
-                                                        <div class="comment-content">
-                                                            <?php echo $review->getMessage(); ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                    <?php
-                                        }
-                                    ?>
-                                </ul>
+                                    <div class="col-6">
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="search" value="<?php echo $operator->getName(); ?>">
+                                            <input type="submit" class="btn btn-card-operator" value="Want to rate this operator?">
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
+
         </main>
 
         <footer>
@@ -165,10 +140,8 @@
     $reviewsManager = new ReviewsManager($pdo);
     $name = $_POST['search'];
     $destinations = $destinationsManager->getDestinationsByOperator($name);
-    $operator = $destinations[0]->getOperator();
-    if ($reviewsManager->get($operator->getId()) == true) {
-        $reviews = $reviewsManager->get($operator->getId());
-    }
+    $operator = $operatorsManager->get($name);
+    $reviews = $reviewsManager->get($operator->getId());
     ?>
 
     <!doctype html>
@@ -200,99 +173,123 @@
 
 
         <main>
-            <div class="container">                
+
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <img src="https://fakeimg.pl/250x100/" class="d-block w-100 img-operator" alt="...">
-                        <h1><?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients</h1>
-                        <?php 
-                            if ($operator->getIs_premium() == 1) {
-                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
-                            }
-                        ?>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <ul>
-                                <?php
-                                    foreach ($destinations as $destination) {
-                                        ?>
-                                        <li>
-                                            <p>Travel to <?php echo $destination->getLocation(); ?> for <?php echo $destination->getPrice(); ?> $</p>
-                                        </li>
-                                        <?php
-                                    } 
-                                ?>
-                            </ul>
+                        <div class="card-operator card-1">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="<?php echo $destination->getImg_url_large(); ?>" class="d-block w-100 img-operator" alt="...">
+                                    </div>
 
-                            <form action="/apps/add-review.php" method="POST">
+                                    <div class="col-7 ratingDiv">
+                                        <!-- Rating Stars Box -->
+                                            <label>Rating:</label>
+                                            <div class="form-group">
+                                                <input class="<?php if($operator->getRating() <= 1) {echo 'clickedStar';}?> star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                                <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
 
-                                <div class="ratingDiv">
-                                    <label for="comment[rating]">Want to rate this operator?</label>
-                                    <div class="form-group">
-                                        <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
-                                        <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
+                                                <input class="<?php if($operator->getRating() <= 2) {echo 'clickedStar';}?> star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                                <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
 
-                                        <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
-                                        <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
+                                                <input class="<?php if($operator->getRating() <= 3) {echo 'clickedStar';}?> star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                                <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
 
-                                        <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
-                                        <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
+                                                <input class="<?php if($operator->getRating() <= 4) {echo 'clickedStar';}?> star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                                <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
 
-                                        <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
-                                        <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
-
-                                        <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
-                                        <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                                <input class="<?php if($operator->getRating() <= 5) {echo 'clickedStar';}?> star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                                <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                            </div>
+                                        <p id="numStar"></p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h1><?php echo $operator->getName(); ?></h1>
+                                        <p>
+                                        <?php 
+                                            if ($operator->getIs_premium() == 1) {
+                                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
+                                            }
+                                        ?>
+                                        </p>
+                                    </div>
 
-                                <label for="author">Your name :</label>
-                                <input type="text" id="author" name="author">
+                                    <div class="col-6">
+                                        <form action="/apps/add-review.php" method="POST">
 
-                                <label for="message">Leave a comment :</label>
-                                <input type="text" id="message" name="message">
+                                            <div class="ratingDiv">
+                                                <label for="comment[rating]">Want to rate this operator?</label>
+                                                <div class="form-group">
+                                                    <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                                    <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
 
-                                <input type="hidden" id="operator" name="operator" value="<?php echo $operator->getId(); ?>">
+                                                    <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                                    <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
 
-                                <input type="submit" value="Send">
-                            </form>
+                                                    <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                                    <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
 
-                            <div class="comments-container">
-                                <h3>Comentaires</h3>
+                                                    <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                                    <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
 
-                                <ul id="comments-list" class="comments-list">
-                                    <?php 
-                                        foreach ($reviews as $review) {
-                                    ?>
-                                            <li>
-                                                <div class="comment-main-level">
-                                                    <!-- Avatar -->
-                                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                                                    <!-- Contenedor del Comentario -->
-                                                    <div class="comment-box">
-                                                        <div class="comment-head">
-                                                            <h6 class="comment-name by-author"><?php echo $review->getAuthor(); ?></a></h6>
-                                                            <span>20 minutes ago</span>
-                                                            <i class="fa fa-reply"></i>
-                                                            <i class="fa fa-heart"></i>
-                                                        </div>
-                                                        <div class="comment-content">
-                                                            <?php echo $review->getMessage(); ?>
-                                                        </div>
-                                                    </div>
+                                                    <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                                    <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
                                                 </div>
-                                            </li>
-                                    <?php
-                                        }
-                                    ?>
-                                </ul>
-                            </div>
+                                            </div>
 
+                                            <label for="author">Your name :</label>
+                                            <input type="text" id="author" name="author">
+
+                                            <label for="message">Leave a comment :</label>
+                                            <input type="text" id="message" name="message">
+
+                                            <input type="hidden" id="operator" name="operator" value="<?php echo $operator->getId(); ?>">
+
+                                            <input type="submit" value="Send">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
+
+            <div class="comments-container">
+                <h3>Comentaires</h3>
+
+                <ul id="comments-list" class="comments-list">
+                    <?php 
+                        foreach ($reviews as $review) {
+                    ?>
+                            <li>
+                                <div class="comment-main-level">
+                                    <!-- Avatar -->
+                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+                                    <!-- Contenedor del Comentario -->
+                                    <div class="comment-box">
+                                        <div class="comment-head">
+                                            <h6 class="comment-name by-author"><?php echo $review->getAuthor(); ?></a></h6>
+                                            <span>20 minutes ago</span>
+                                            <i class="fa fa-reply"></i>
+                                            <i class="fa fa-heart"></i>
+                                        </div>
+                                        <div class="comment-content">
+                                            <?php echo $review->getMessage(); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                    <?php
+                        }
+                    ?>
+                </ul>
+            </div>
+
         </main>
 
         <footer>
@@ -353,59 +350,66 @@
         <div class="container">
             <?php
                 foreach ($operators as $operator) {
-            ?>
-                    <div class="row">
-                        <div class="col-12">
-                            <img src="https://fakeimg.pl/250x100/" class="d-block w-100 img-operator" alt="...">
-                            <h1><?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients</h1>
-                            <?php 
-                            if ($operator->getIs_premium() == 1) {
-                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
-                            }
-                        ?>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                
-                                <form action="/apps/add-review.php" method="POST">
-
-                                    <div class="ratingDiv">
-                                        <label for="comment[rating]">Want to rate this operator?</label>
-                                        <div class="form-group">
-                                            <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
-                                            <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
-
-                                            <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
-                                            <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
-
-                                            <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
-                                            <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
-
-                                            <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
-                                            <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
-
-                                            <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
-                                            <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
-                                        </div>
+            ?> 
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card-operator card-1">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="../img/<?php echo $operator->getImage(); ?>" class="d-block w-100 img-operator" alt="...">
                                     </div>
 
-                                    <label for="author">Your name :</label>
-                                    <input type="text" id="author" name="author">
+                                    <div class="col-7 ratingDiv">
+                                        <!-- Rating Stars Box -->
+                                            <label>Rating:</label>
+                                            <div class="form-group">
+                                                <input class="<?php if($operator->getRating() <= 1) {echo 'clickedStar';}?> star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                                <label for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
 
-                                    <label for="message">Leave a comment :</label>
-                                    <input type="text" id="message" name="message">
+                                                <input class="<?php if($operator->getRating() <= 2) {echo 'clickedStar';}?> star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                                <label for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
 
-                                    <input type="hidden" id="operator" name="operator" value="<?php echo $operator->getId(); ?>">
+                                                <input class="<?php if($operator->getRating() <= 3) {echo 'clickedStar';}?> star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                                <label for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
 
-                                    <input type="submit" value="Send">
-                                </form>
+                                                <input class="<?php if($operator->getRating() <= 4) {echo 'clickedStar';}?> star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                                <label for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
 
+                                                <input class="<?php if($operator->getRating() <= 5) {echo 'clickedStar';}?> star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                                <label for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                            </div>
+                                        <p id="numStar"></p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h1><?php echo $operator->getName(); ?></h1>
+                                        <p>
+                                        <?php 
+                                            if ($operator->getIs_premium() == 1) {
+                                                ?> <a href="<?php echo $operator->getLink(); ?>">Website : <?php echo $operator->getLink(); ?></a> <?php
+                                            }
+                                        ?>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="search" value="<?php echo $operator->getName(); ?>">
+                                            <input type="submit" class="btn btn-card-operator" value="Want to rate this operator?">
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
             <?php
                 }
-            ?>               
+            ?>
+                          
         </div>
     </main>
 
