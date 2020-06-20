@@ -33,9 +33,9 @@ class Review
     }
 
     ///// get and setter for rating /////
-    public function setRating(string $rating)
+    public function setRating(int $rating)
     {      
-        $this->rating = htmlspecialchars($rating);
+        $this->rating = $rating;
     }
     public function getRating()
     {

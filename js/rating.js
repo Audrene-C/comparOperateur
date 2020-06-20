@@ -32,7 +32,7 @@ if(document.querySelector(".starIcon1") != undefined){
         // check his radio button
         document.querySelector("input[type=radio].star"+numStar).checked = true;
         let checkedValue = document.querySelector('input[name="comment[rating]"]:checked').value;
-        // console.log(checkedValue);
+        console.log(checkedValue);
     }
 
     // translate hover effect
@@ -62,6 +62,7 @@ if(document.querySelector(".starIcon1") != undefined){
 
             // click event listener (change color and check the radio button)
             stars[i].addEventListener("click", ()=> {
+                console.log('ppl');
                 // remove all the clickedStar
                 removeClickedStar();
                 // add clickedStar and check his radio button

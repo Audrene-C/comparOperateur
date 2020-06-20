@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT'];
+$path  = str_replace('apps', '', __DIR__);
 //include($path.'/comparOperateur/config/autoload.php');
 include($path.'/config/autoload.php');
 //include_once $path.'/comparOperateur/partials/connection.php';
@@ -7,11 +7,11 @@ include_once $path.'/partials/connection.php';
 $reviewsManager = new ReviewsManager($pdo);
 $operatorsManager = new OperatorsManager($pdo);
 
-if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['message']) AND isset($_POST['rating'])) {
+if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['message']) AND isset($_POST['comment']['rating'])) {
     $operatorId = intval($_POST['operator']);
     $author = $_POST['author'];
     $message = $_POST['message'];
-    $newRating = intval($_POST['rating']);
+    $newRating = intval($_POST['comment']['rating']);
 
     $operator = $operatorsManager->get($operatorId);
 
@@ -22,10 +22,10 @@ if (!empty($_POST['operator']) AND !empty($_POST['author']) AND !empty($_POST['m
     $reviewsManager->create($review);
 
     $updatedRating = round($operatorsManager->calcAverageRating($operatorId));
-    var_dump($updatedRating);
-    //$operatorsManager->updateRating($operator, intval($updatedRating));
+    $operatorsManager->updateRating($operator, intval($updatedRating));
 
-    //header('admin.php');
+    // header("Location: index.php");
+    // exit();
 } else {
     echo "zut";
 }
