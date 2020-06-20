@@ -69,11 +69,16 @@ body {
 }
 
 .btn-card{
-    margin-top: 80px;
+    margin-top: 25px;
     margin-right: 10px;
-    border: solid 2px #98ff98;
+    border: solid 2px #12f690;
     color: #00cc66;
     float: right;
+}
+
+.btn-card:hover{
+    background-color: #12f690;
+    color: #555555;
 }
 
 .input-search{
@@ -84,5 +89,21 @@ i{
     color: whitesmoke;
 }
 
+.img-size{
+    height: 200px;
+    width: 100%;
+}
 
+
+.btn-destination{
+    background-color: #12f690;
+    color: #555555;
+}
+
+
+.btn-destination:hover{
+    border: solid 1px #12f690;
+    background-color: white;
+    color: #555555;
+}
 

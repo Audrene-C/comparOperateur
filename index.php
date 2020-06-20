@@ -1,8 +1,9 @@
-<?php 
-    // include($path.'/comparOperateur/config/autoload.php');
-    include(__DIR__.'/config/autoload.php');
-    // include_once $path.'/comparOperateur/partials/connection.php';
-    include_once __DIR__.'/partials/connection.php';
+<?php
+    $path = __DIR__;
+    include($path.'/config/autoload.php');
+    /*include(__DIR__.'/config/autoload.php');*/
+    include_once $path.'/partials/connection.php';
+    /*include_once __DIR__.'/partials/connection.php';*/
     $destinationsManager = new DestinationsManager($pdo);
 ?>
 
@@ -68,7 +69,7 @@
             $rowCount++; ?>  
                 <div class="col-lg-4 col-md-2 col-sm-1">
                     <div class="card card-1">
-                        <img src="img/<?php echo $destination->getImg_url_small(); ?>" class="d-block w-100" alt="...">
+                        <img src="img/<?php echo $destination->getImg_url_small(); ?>" class="d-block w-100 img-size" alt="...">
                         <span class="d2">
                         <h1><?php echo $destination->getLocation(); ?></h1>
                         <form action="views/destinations.php" method="POST">

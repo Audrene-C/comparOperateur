@@ -58,7 +58,7 @@
                                             <p>Travel with <?php echo $operator->getName(); ?>, rated <?php echo $operator->getRating(); ?>/5 by our clients, for <?php echo $destination->getPrice(); ?> $</p>
                                             <form action="operators.php" method="POST">
                                                 <input type="hidden" id="operator" name="operator" value="<?php echo $operator->getId(); ?>">
-                                                <input type="submit" class="btn" value="See more">
+                                                <input type="submit" class="btn btn-destination" value="See more">
                                             </form>
                                         </li>
                                         <?php
