@@ -1,0 +1,88 @@
+body{
+    text-align: center;
+    background-color: #12f690;
+}
+
+h1, h3, p, label{
+    color: #555555;
+}
+
+input, select{
+    border: solid 1px #12f690;
+    border-radius: 10px;
+    color: #12f690;
+}
+
+.btn-admin{
+    background-color: #12f690;
+    color: #555555;
+}
+
+.btn-admin:hover{
+    border: solid 1px #12f690;
+    background-color: white;
+    color: #555555;
+}
+
+.box {
+    width:70%;
+    height:400px;
+    background: #E0EBEB;
+    margin:40px auto;
+}
+
+.box-2 {
+    width:70%;
+    height:150px;
+    background: #E0EBEB;
+    margin:40px auto;
+}
+
+.box-3 {
+    width:70%;
+    height:220px;
+    background: #E0EBEB;
+    margin:40px auto;
+}
+
+.box-4 {
+    width:70%;
+    height:270px;
+    background: #E0EBEB;
+    margin:40px auto;
+}
+
+.effect
+{
+    position: relative;
+}
+.effect:before, .effect:after
+{
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+.effect:after
+{
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+}
